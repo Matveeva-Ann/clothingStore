@@ -1,0 +1,4 @@
+
+.inputRadio:checked + .goodsColorsItem::before{
+  width: 100%;
+}
