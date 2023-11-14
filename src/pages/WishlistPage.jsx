@@ -5,6 +5,7 @@ import { WishlistList, WishlistPoint, } from "../components/wishlist/Wishlist.st
 import WishListEmpty from "./Additionals/wishListEmpty/WishListEmpty";
 import WishlistItem from "../components/wishlist/WishlistItem";
 import PropTypes from 'prop-types';
+import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 
 export default function Wishlist({ setBasketCount, setFavoriteCount }) {
   const [favorites, setFavorites] =
@@ -37,12 +38,23 @@ export default function Wishlist({ setBasketCount, setFavoriteCount }) {
       basketArr.reduce((accum, elem) => accum + Number(elem.amount), 0)
     );
   }
+  const linksArr =[
+    {
+      link: '',
+      name: 'Home',
+    },
+    {
+      link: 'wishlist',
+      name: 'Wishlist',
+    }
+  ]
 
   return (
    <>
      {favorites.length === 0  
        ? <WishListEmpty />
        : <>
+          <BreadCrumbs linksArr={linksArr}></BreadCrumbs>
           <WishlistTitle></WishlistTitle>
           <WishlistList>
             {favorites.map((good, index) => (

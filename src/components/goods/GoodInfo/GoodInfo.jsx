@@ -26,6 +26,7 @@ import PropTypes from "prop-types";
 import "./style.css";
 import Loading from "pages/Additionals/Loading/Loading";
 import ErrorRequest from "pages/Additionals/ErrorRequest/ErrorRequest";
+import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 
 const Status = {
   LOADING: "loading",
@@ -38,26 +39,43 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [status, setStatus] = useState(Status.LOADING);
-
+  const [linksArr, setLinksArr] = useState([]);
   //параметр з ссилки
   const { goodId } = useParams();
+ 
+  const fetchData = async () => {
+    try {
+      const data = await sendRequest(urlGoods);
+      const cardData = data.find((good) => Number(good.sku) === Number(goodId));
+      setGood(cardData);
+      setColor(cardData.colors[0].name);
+      checkFavorite(cardData);
+      setStatus(Status.RESOLVED);
+      setLinksArr([
+        {
+          link: '',
+          name: 'Home',
+        },
+        {
+          link: `Shop`,
+          name: `Wardrobe for Everyone`,
+        },
+        {
+          link: `${cardData.category}`,
+          name: `${cardData.category}`,
+        },
+        {
+          link: `${cardData.name}`,
+          name: `${cardData.name}`,
+        }
+      ])
+    } catch (e) {
+      setStatus(Status.REJECTED);
+    }
+  };
 
   // імітація запиту на отримання даних по одному товару
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await sendRequest(urlGoods);
-        const cardData = data.find(
-          (good) => Number(good.sku) === Number(goodId)
-        );
-        setGood(cardData);
-        setColor(cardData.colors[0].name);
-        checkFavorite(cardData);
-        setStatus(Status.RESOLVED);
-      } catch (e) {
-        setStatus(Status.REJECTED);
-      }
-    };
     fetchData();
   }, [goodId]);
 
@@ -107,11 +125,14 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
     window.localStorage.setItem("basket", JSON.stringify(newBasketArr));
     setBasketCount(newBasketArr.length);
   }
+ 
 
   if (status === "loading") {
     return <Loading></Loading>;
   } else if (status === "resolved") {
     return (
+      <>
+      <BreadCrumbs linksArr={linksArr}></BreadCrumbs>
       <GoodWrapper>
         <GoodImg
           src={good.imagePath}
@@ -198,7 +219,7 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
           ></ModalAddToBasket>
         )}
       </GoodWrapper>
-    );
+    </>);
   } else if (status === "rejected") {
     return <ErrorRequest></ErrorRequest>;
   }

@@ -3,6 +3,7 @@ import BasketInfoRegister from "components/basket/BasketInfoRegister";
 import BasketTable from "components/basket/BasketTable";
 import { useState } from "react";
 import PropTypes from 'prop-types';
+import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 
 export default function Basket({setBasketCount}) {
   const [basketGoods, setBasketGoods] = useState(JSON.parse(window.localStorage.getItem("basket")) || []);
@@ -13,13 +14,24 @@ export default function Basket({setBasketCount}) {
     setBasketGoods(updatedBasket);
     setBasketCount(updatedBasket.length)
   }
-
+  const linksArr =[
+    {
+      link: '',
+      name: 'Home',
+    },
+    {
+      link: 'basket',
+      name: 'Add To Cart',
+    }
+  ]
+  
   return (
     <>
       {basketGoods.length === 0 
         ? (<BasketEmpty></BasketEmpty>) 
         : (
            <>
+             <BreadCrumbs linksArr={linksArr}></BreadCrumbs>
              <BasketInfoRegister></BasketInfoRegister>
              <BasketTable basketGoods={basketGoods} deleteFromBasket={deleteFromBasket}></BasketTable>
            </>
