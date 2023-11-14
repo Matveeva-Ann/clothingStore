@@ -10,5 +10,5 @@ export default function ModalFooter({ children }) {
 }
 
 ModalFooter.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 }

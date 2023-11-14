@@ -4,8 +4,17 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { CardLink, Table, Tbody, TBodyTd, TBodyTr, THeader, THeaderTh, } from "./Basket.styled";
 import { iconSize } from "constants";
 import PropTypes from 'prop-types';
+import ModalRemoveFromBasket from "components/modals/ModalRemoveFromBasket";
+import { useState } from "react";
 
 export default function BasketTable({ basketGoods, deleteFromBasket }) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [goodSku, setGoodSku] = useState(0);
+
+  function onClickDelete (sku){
+    setModalIsOpen(true);
+    setGoodSku(sku)
+  }
 
   return (
     <Table>
@@ -29,13 +38,18 @@ export default function BasketTable({ basketGoods, deleteFromBasket }) {
             </TBodyTd>
             <TBodyTd>${good.price}</TBodyTd>
             <TBodyTd>{good.amount}</TBodyTd>
-            <TBodyTd style={{ color: '#BEBCBD', textTransform: 'uppercase'}}>{good.shipping || 'FREE'}</TBodyTd>
-            <TBodyTd>${good.price * good.amount}</TBodyTd>
+            <TBodyTd style={{ color: '#BEBCBD', textTransform: 'uppercase' }}>{good.shipping || 'FREE'}</TBodyTd>
+            <TBodyTd>${parseFloat((good.price * good.amount).toFixed(2))}</TBodyTd>
             <TBodyTd>
-              <IconButton background='white' onClick={() => deleteFromBasket(good.sku)} ariaLabel='delete good from basket' style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }}>
+              <IconButton background='white' onClick={() => onClickDelete(good.sku)} ariaLabel='delete good from basket' style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }}>
                 <RiDeleteBinLine size={iconSize.sm} style={{ color: '#8A33FD' }}></RiDeleteBinLine>
               </IconButton>
             </TBodyTd>
+            { modalIsOpen && <ModalRemoveFromBasket 
+                              onClickDelete={() => deleteFromBasket(goodSku)} 
+                              setModalIsOpen={setModalIsOpen}>
+                           </ModalRemoveFromBasket>
+           }
           </TBodyTr>
         ))}
       </Tbody>
