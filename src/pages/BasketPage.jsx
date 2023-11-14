@@ -1,4 +1,4 @@
-import BasketEmpty from "components/basket/BasketEmpty";
+import BasketEmpty from "pages/Additionals/BasketEmpty/BasketEmpty";
 import BasketInfoRegister from "components/basket/BasketInfoRegister";
 import BasketTable from "components/basket/BasketTable";
 import { useState } from "react";

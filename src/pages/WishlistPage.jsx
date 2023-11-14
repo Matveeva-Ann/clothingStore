@@ -2,7 +2,7 @@ import WishlistTitle from "components/wishlist/WishlistTitle";
 import { useLocalStorage } from "helpers/hooks/useLocalStorage";
 import { useState } from "react";
 import { WishlistList, WishlistPoint, } from "../components/wishlist/Wishlist.styled";
-import WishListEmpty from "../components/wishlist/wishListEmpty/WishListEmpty";
+import WishListEmpty from "./Additionals/wishListEmpty/WishListEmpty";
 import WishlistItem from "../components/wishlist/WishlistItem";
 import PropTypes from 'prop-types';
 

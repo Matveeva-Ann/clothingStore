@@ -10,8 +10,9 @@ export const GoodWrapper = styled.div`
 `
 
 export const GoodImg = styled.img`
-   max-width: 400px;
+  border-radius: 8px;
 `
+
 export const GoodInformation = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `

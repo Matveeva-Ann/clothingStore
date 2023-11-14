@@ -6,6 +6,7 @@ export const Btn = styled(Link)`
    cursor: pointer;
    display: block;
    padding: 10px 15px;
+   max-width: 250px;
    background-color: ${props => props.theme.colors.blackText};
    color: ${props => props.theme.colors.white};
    font-size: 1.5vw;

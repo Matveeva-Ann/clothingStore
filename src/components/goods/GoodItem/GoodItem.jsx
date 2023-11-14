@@ -17,7 +17,7 @@ export default function GoodItem({ good, onClickFavorite, onClickBasket, countBa
   return (
     <div>
       <GoodLink to={`/goods/${good.sku}`}>
-        <GoodImg src={good.imagePath} alt={good.name} />
+        <GoodImg src={good.imagePath} alt={good.name} width={'270px'} height={'370px'}/>
         <GoodName title={good.name}>{good.name}</GoodName>
       </GoodLink>
       <InfoBlock>

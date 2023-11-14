@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import ErrorPageNotFound from 'pages/ErrorPageNotFound/ErrorPageNotFound';
+import ErrorPageNotFound from 'pages/Additionals/ErrorPageNotFound/ErrorPageNotFound';
 import Wishlist from 'pages/WishlistPage';
 import Basket from 'pages/BasketPage';
 import LoginPage from 'pages/LoginPage';

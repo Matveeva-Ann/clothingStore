@@ -5,9 +5,18 @@ import sendRequest from 'helpers/sendRequest';
 import { urlGoods } from 'constants/urlGoodsCollection';
 import { useLocalStorage } from 'helpers/hooks/useLocalStorage';
 import PropTypes from 'prop-types';
+import Loading from 'pages/Additionals/Loading/Loading';
+import ErrorRequest from 'pages/Additionals/ErrorRequest/ErrorRequest';
+
+const Status = {
+  LOADING: 'loading',
+  RESOLVED: 'resolved',
+  REJECTED: 'rejected'
+}
 
 export default function GoodsList({ category, setFavoriteCount, countBasket, favoriteCount }) {
   const [goodsCollection, setGoodsCollection] = useState([]);
+  const [status, setStatus] = useState(Status.LOADING);
   const [, setLocalStorageCollection] = useLocalStorage('favorite');
 
   // змінюємо масив товарів залежно від обраних користувачем товарів
@@ -22,19 +31,27 @@ export default function GoodsList({ category, setFavoriteCount, countBasket, fav
   }
   // запит на отримання товарів з сервера з фільтрацією по категоріям
   useEffect(() => {
-    sendRequest(urlGoods).then((data) => {
-      let dataArr = [];
-      if(category === 'All'){
-        dataArr = data;
-      } else{
-        dataArr = data.filter(elem => elem.category === category);
+    const fetchData = async () => {
+      try {
+        const data = await sendRequest(urlGoods);
+        let dataArr = [];
+        if (category === 'All') {
+          dataArr = data;
+        } else {
+          dataArr = data.filter((elem) => elem.category === category);
+        }
+        setGoodsCollection(updateGoodsWithFavorites(dataArr));
+        setStatus(Status.RESOLVED);
+      } catch (error) {
+        setStatus(Status.REJECTED);
       }
-      setGoodsCollection(updateGoodsWithFavorites(dataArr));
-    })
+    };
+
+    fetchData()
   }, [category])
 
   //перерендер взалежності від того чи були видалені товари з обраного
-  useEffect(()=>{
+  useEffect(() => {
     setGoodsCollection(updateGoodsWithFavorites(goodsCollection))
   }, [favoriteCount])
 
@@ -61,25 +78,31 @@ export default function GoodsList({ category, setFavoriteCount, countBasket, fav
     countBasket(basketArr.reduce((accum, elem) => accum + Number(elem.amount), 0))
   }
 
-  return (
-    <GoodsCollectionWrapper>
-      {category === 'All' 
+  if (status === 'loading') {
+    return <Loading></Loading>
+  } else if (status === 'resolved') {
+    return (
+      <GoodsCollectionWrapper>
+        {category === 'All'
           ? <GoodsCollectionTitle>Wardrobe for Everyone</GoodsCollectionTitle>
           : <GoodsCollectionTitle>For {category}</GoodsCollectionTitle>
-      }
-      <GoodsListStyle>
-        {goodsCollection.map((elem, index) => (
-          <GoodsItemStyle key={elem.sku}>
-            <GoodItem good={elem}
-              onClickFavorite={() => addToFavorite(index)}
-              onClickBasket={() => addToBasket(elem)}
-              countBasket={countBasket}
-            ></GoodItem>
-          </GoodsItemStyle>))
         }
-      </GoodsListStyle>
-    </GoodsCollectionWrapper>
-  )
+        <GoodsListStyle>
+          {goodsCollection.map((elem, index) => (
+            <GoodsItemStyle key={elem.sku}>
+              <GoodItem good={elem}
+                onClickFavorite={() => addToFavorite(index)}
+                onClickBasket={() => addToBasket(elem)}
+                countBasket={countBasket}
+              ></GoodItem>
+            </GoodsItemStyle>))
+          }
+        </GoodsListStyle>
+      </GoodsCollectionWrapper>
+    )
+  } else if (status === 'rejected'){
+    return <ErrorRequest></ErrorRequest>
+  }
 }
 
 GoodsList.propTypes = {

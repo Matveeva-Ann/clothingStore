@@ -7,9 +7,8 @@ export const GoodLink = styled(Link) `
 `
 
 export const GoodImg = styled.img`
-  max-width: 270px;
-  max-height: 390px;
   border-radius: 10px;
+  object-fit: cover;
 `
 
 export const GoodName = styled.h3`

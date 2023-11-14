@@ -1,5 +1,5 @@
 import LinkButton from 'containers/LinkButton/LinkButton';
-import { BasketEmptyImg, BasketEmptyWrapper } from './Basket.styled';
+import { BasketEmptyImg, BasketEmptyWrapper } from '../../../components/basket/Basket.styled';
 import img from './img/modal-cart-dummy.svg';
 
 export default function BasketEmpty() {
