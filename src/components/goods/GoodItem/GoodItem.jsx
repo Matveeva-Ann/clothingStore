@@ -6,7 +6,7 @@ import { BsFillBasket3Fill } from "react-icons/bs";
 import { GoodImg, GoodLink, GoodName, GoodPrice, IconsWrapper, InfoBlock } from "./GoodItem.styled";
 import PropTypes from 'prop-types';
 import IconButton from "containers/IconButton/IconButton";
-
+import defaultImg from '../img/1_480x480.png';
 export default function GoodItem({ good, onClickFavorite, onClickBasket, countBasket }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -17,7 +17,7 @@ export default function GoodItem({ good, onClickFavorite, onClickBasket, countBa
   return (
     <div>
       <GoodLink to={`/goods/${good.sku}`}>
-        <GoodImg src={good.imagePath} alt={good.name} width={'270px'} height={'370px'}/>
+        <GoodImg src={good.imagePath[0]?.url ?? defaultImg} alt={good.name} width={'270px'} height={'370px'}/>
         <GoodName title={good.name}>{good.name}</GoodName>
       </GoodLink>
       <InfoBlock>

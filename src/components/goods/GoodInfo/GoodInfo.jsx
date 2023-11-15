@@ -27,6 +27,7 @@ import "./style.css";
 import Loading from "pages/Additionals/Loading/Loading";
 import ErrorRequest from "pages/Additionals/ErrorRequest/ErrorRequest";
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
+import defaultImg from '../img/1_480x480.png';
 
 const Status = {
   LOADING: "loading",
@@ -63,10 +64,6 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
         {
           link: `${cardData.category}`,
           name: `${cardData.category}`,
-        },
-        {
-          link: `${cardData.name}`,
-          name: `${cardData.name}`,
         }
       ])
     } catch (e) {
@@ -126,16 +123,22 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
     setBasketCount(newBasketArr.length);
   }
  
+  function findImg (imagePathArr){
+    const foundImage = imagePathArr.find(elem => elem.color === color);
+    console.log(foundImage)
+    return foundImage ? foundImage.url : imagePathArr[0]?.url || defaultImg;
+  }
+
 
   if (status === "loading") {
     return <Loading></Loading>;
   } else if (status === "resolved") {
     return (
       <>
-      <BreadCrumbs linksArr={linksArr}></BreadCrumbs>
+      <BreadCrumbs linksArr={linksArr} name={good.name}></BreadCrumbs>
       <GoodWrapper>
         <GoodImg
-          src={good.imagePath}
+          src={findImg(good.imagePath)}
           alt={good.name}
           width="400px"
           height="auto"
@@ -144,7 +147,7 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
           <GoodCategory>For {good.category}</GoodCategory>
           <h2>{good.name}</h2>
           <GoodsDescriptionList>
-            {good.description.map((elem, index) => {
+            {good.description?.map((elem, index) => {
               return (
                 <GoodDescriptionItem key={index}>{elem}</GoodDescriptionItem>
               );

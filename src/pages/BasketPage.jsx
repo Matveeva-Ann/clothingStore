@@ -18,10 +18,6 @@ export default function Basket({setBasketCount}) {
     {
       link: '',
       name: 'Home',
-    },
-    {
-      link: 'basket',
-      name: 'Add To Cart',
     }
   ]
   
@@ -31,7 +27,7 @@ export default function Basket({setBasketCount}) {
         ? (<BasketEmpty></BasketEmpty>) 
         : (
            <>
-             <BreadCrumbs linksArr={linksArr}></BreadCrumbs>
+             <BreadCrumbs linksArr={linksArr} name={'Add To Cart'}></BreadCrumbs>
              <BasketInfoRegister></BasketInfoRegister>
              <BasketTable basketGoods={basketGoods} deleteFromBasket={deleteFromBasket}></BasketTable>
            </>

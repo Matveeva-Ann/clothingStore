@@ -3,13 +3,30 @@
     "category": "Men",
     "name": "Джинси 'Slim Fit'",
     "price": "49.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/5/3/5312F-55J-001-1-730324_1.jpg",
+    "imagePath": [
+      {
+        "color": "Cірий",
+        "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-09X-001-1-566061_18.jpg"
+      },
+      {
+        "color": "Червоний",
+        "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-33X-003-1-519679_22.jpg"
+      },
+      {
+        "color": "Оливковий",
+        "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-91X-001-1-566063_18.jpg"
+      },
+      {
+        "color": "Чорний",
+        "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-99X-002-1-519681_22.jpg"
+      }
+    ],
     "sku": "789012",
     "colors": [
-      { "name": "Синій", "color": "#0000FF", "isChecked": true },
-      { "name": "Чорний", "color": "#0E0F0E", "isChecked": false },
-      { "name": "Сірий", "color": "#A6ACAF", "isChecked": false },
-      { "name": "Рожевий", "color": "#CA7EF8", "isChecked": false }
+      { "name": "Cірий", "color": "#c0c0c0", "isChecked": true },
+      { "name": "Червоний", "color": "#A52A2A", "isChecked": false },
+      { "name": "Оливковий", "color": "#556B2F", "isChecked": false },
+      { "name": "Чорний", "color": "#000000", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -22,14 +39,32 @@
   },
   {
     "category": "Men",
-    "name": "Джемпер",
+    "name": "Трикотажні джогери",
     "price": "39.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/0/4/0498A-90X-001-1-740132_1.jpg",
+    "imagePath": [
+      {
+        "color": "Темно-синій",
+        "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-59M-001-1-500969_12.jpg"
+      },
+      {
+        "color": "Бежевий",
+        "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-80X-001-1-502657_12.jpg"
+      },
+      {
+        "color": "Сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-90X-001-1-540491_12.jpg"
+      },
+      {
+        "color": "Темно-сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-9MM-001-1-500961_12.jpg"
+      }
+    ],
     "sku": "345678",
     "colors": [
-      { "name": "Чорний", "color": "#333333", "isChecked": true },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Темно-синій", "color": "#191970", "isChecked": true },
+      { "name": "Бежевий", "color": "#A0522D", "isChecked": false },
+      { "name": "Темно-сірий", "color": "#696969", "isChecked": false },
+      { "name": "Сірий", "color": "#C0C0C0", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -44,11 +79,18 @@
     "category": "Women",
     "name": "Жіноча сукня 'вечірнє вбрання'",
     "price": "59.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/1/0/1076X-99X-001-1-733519_1.jpg",
+    "imagePath": [
+      {
+        "color": "Рожевий",
+        "url": "https://static.sinsay.com/media/catalog/product/2/5/2598X-30X-002-1-726732.jpg"
+      },
+      {
+        "color": "Сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/2/5/2598X-MLC-002-1-726734.jpg"
+      }
+    ],
     "sku": "901234",
     "colors": [
-      { "name": "Білий", "color": "#fff", "isChecked": true },
-      { "name": "Чорний", "color": "#0E0F0E", "isChecked": false },
       { "name": "Сірий", "color": "#A6ACAF", "isChecked": false },
       { "name": "Рожевий", "color": "#CA7EF8", "isChecked": false }
     ],
@@ -58,15 +100,27 @@
   },
   {
     "category": "Men",
-    "name": "Сорочка regular fit",
+    "name": "Джемпер",
     "price": "69.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/1/9/1911O-08X-001-1-742619.jpg",
+    "imagePath": [
+      {
+        "color": "Темно синій",
+        "url": "https://static.sinsay.com/media/catalog/product/0/2/0232D-59X-001-1-740657.jpg"
+      },
+      {
+        "color": "Коричневувато-зелений",
+        "url": "https://static.sinsay.com/media/catalog/product/0/2/0232D-78X-003-1-743454.jpg"
+      },
+      {
+        "color": "Нюдовий",
+        "url": "https://static.sinsay.com/media/catalog/product/0/2/0232D-08X-001-1-740660_4.jpg"
+      }
+    ],
     "sku": "567890",
     "colors": [
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": true },
-      { "name": "Чорний", "color": "#333333", "isChecked": false },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Темно синій", "color": "#191970", "isChecked": true },
+      { "name": "Коричневувато-зелений", "color": "#556B2F", "isChecked": false },
+      { "name": "Нюдовий", "color": "#EEE8AA", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -82,12 +136,25 @@
     "category": "Men",
     "name": "Шапка-біні",
     "price": "44.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/4/3/4338A-01M-001-1-740675.jpg",
+    "imagePath": [
+      {
+        "color": "Бежевий",
+        "url": "https://static.sinsay.com/media/catalog/product/3/0/3001F-80X-002-1-388027_4.jpg"
+      },
+      {
+        "color": "Сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/3/0/3001F-09X-002-1-388025_9.jpg"
+      },
+      {
+        "color": "Чорний",
+        "url": "https://static.sinsay.com/media/catalog/product/3/0/3001F-99X-001-1-378857_6.jpg"
+      }
+    ],
     "sku": "654321",
     "colors": [
       { "name": "Чорний", "color": "#333333", "isChecked": true },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Бежевий", "color": "#CD853F", "isChecked": false },
+      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false }
     ],
     "favorite": false,
     "description": ["декоративна нашивка"],
@@ -95,15 +162,27 @@
   },
   {
     "category": "Children",
-    "name": "Лонгсліви",
+    "name": "Худі",
     "price": "29.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/8/6/8625M-59X-001-1-523487_7.jpg",
+    "imagePath": [
+      {
+        "color": "Бежевий",
+        "url": "https://static.sinsay.com/media/catalog/product/2/1/2169Q-80X-001-1-500547_10.jpg"
+      },
+      {
+        "color": "Блакитний",
+        "url": "https://static.sinsay.com/media/catalog/product/2/1/2169Q-45X-001-1-473519_6.jpg"
+      },
+      {
+        "color": "Пастельний рожевий",
+        "url": "https://static.sinsay.com/media/catalog/product/2/1/2169Q-03X-002-1-500545_13.jpg"
+      }
+    ],
     "sku": "432109",
     "colors": [
-      { "name": "Синій", "color": "#0000FF", "isChecked": true },
-      { "name": "Чорний", "color": "#333333", "isChecked": false },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Бежевий", "color": "#D2B48C", "isChecked": false },
+      { "name": "Блакитний", "color": "#4682B4", "isChecked": false },
+      { "name": "Пастельний рожевий", "color": "#FFB6C1", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -117,14 +196,27 @@
   },
   {
     "category": "Children",
-    "name": "Утеплена стьобана куртка",
+    "name": "Утеплений зимовий комбінезон",
     "price": "34.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/8/3/8368N-30X-001-1-507701_29.jpg",
+    "imagePath": [
+      {
+        "color": "Темно-синій",
+        "url": "https://static.sinsay.com/media/catalog/product/8/5/8532N-59X-020-1-567815_5.jpg"
+      },
+      {
+        "color": "Рожевий",
+        "url": "https://static.sinsay.com/media/catalog/product/8/5/8532N-MLC-002-1-540477_12.jpg"
+      },
+      {
+        "color": "Нюдовий",
+        "url": "https://static.sinsay.com/media/catalog/product/8/5/8532N-35X-022-1-567813_5.jpg"
+      }
+    ],
     "sku": "210987",
     "colors": [
-      { "name": "Чорний", "color": "#333333", "isChecked": true },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Темно-синій", "color": "#191970", "isChecked": true },
+      { "name": "Нюдовий", "color": "#F08080", "isChecked": false },
+      { "name": "Рожевий", "color": "#FF00FF", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -138,15 +230,32 @@
   },
   {
     "category": "Children",
-    "name": "Світшот",
+    "name": "Стьобана куртка",
     "price": "24.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/7/0/7086Y-01M-001-1-737778.jpg",
+    "imagePath": [
+      {
+        "color": "Фуксія",
+        "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-43X-022-1-395803_19.jpg"
+      },
+      {
+        "color": "Різнобарвний",
+        "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-MLC-021-1-395807_2.jpg"
+      },
+      {
+        "color": "Світло-жовтий",
+        "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-10X-020-1-395801_16.jpg"
+      },
+      {
+        "color": "Темно-синій",
+        "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-59X-020-1-395805_18.jpg"
+      }
+    ],
     "sku": "876543",
     "colors": [
-      { "name": "Коричневий", "color": "#8B4513", "isChecked": true },
-      { "name": "Чорний", "color": "#333333", "isChecked": false },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Фуксія", "color": "#ff00ff", "isChecked": true },
+      { "name": "Різнобарвний", "color": "#00008B", "isChecked": false },
+      { "name": "Світло-жовтий", "color": "#F0E68C", "isChecked": false },
+      { "name": "Темно-синій", "color": "#000080", "isChecked": false }
     ],
     "favorite": false
   },
@@ -154,11 +263,29 @@
     "category": "Children",
     "name": "Лонгслів Disney",
     "price": "14.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/Z/E/ZE087-03X-001-1-726028.jpg",
+    "imagePath": [
+      {
+        "color": "Сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-09J-001-1-746820.jpg"
+      },
+      {
+        "color": "Блакитний",
+        "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-50J-001-1-716942.jpg"
+      },
+      {
+        "color": "Синій",
+        "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-52J-001-1-746818.jpg"
+      },
+      {
+        "color": "Темно-сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-90J-001-1-731489_1.jpg"
+      }
+    ],
     "sku": "876553",
     "colors": [
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": true },
-      { "name": "Чорний", "color": "#333333", "isChecked": false },
+      { "name": "Темно-сірий", "color": "#808080", "isChecked": true },
+      { "name": "Блакитний", "color": "#4682B4", "isChecked": false },
+      { "name": "Синій", "color": "#000080", "isChecked": false },
       { "name": "Сірий", "color": "#9E9E9E", "isChecked": false }
     ],
     "favorite": false,
@@ -172,14 +299,37 @@
   },
   {
     "category": "Women",
-    "name": "Джемпер в рубчик",
+    "name": "Світшот із обробкою гумкою",
     "price": "8.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/7/3/7383J-99X-002-1-729072.jpg",
+    "imagePath": [
+      {
+        "color": "Kавовий",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-84X-001-1-709781_3.jpg"
+      },
+      {
+        "color": "Блідо-зелений",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-07X-001-1-709779_4.jpg"
+      },
+      {
+        "color": "Нюдовий",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-02X-001-1-709776_4.jpg"
+      },
+      {
+        "color": "Темно-сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-90X-001-1-725104.jpg"
+      },
+      {
+        "color": "Чорний",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-99X-001-1-729059.jpg"
+      }
+    ],
     "sku": "876753",
     "colors": [
-      { "name": "Чорний", "color": "#333333", "isChecked": true },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Kавовий", "color": "#A0522D", "isChecked": true },
+      { "name": "Блідо-зелений", "color": "#8FBC8F", "isChecked": false },
+      { "name": "Нюдовий", "color": "#EEE8AA", "isChecked": false },
+      { "name": "Темно-сірий", "color": "#2F4F4F", "isChecked": false },
+      { "name": "Чорний", "color": "#000000", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -192,15 +342,32 @@
   },
   {
     "category": "Women",
-    "name": "Джинси mom high waist",
+    "name": "Мінісукня на бретельках",
     "price": "18.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/6/1/6193J-01J-001-1-732877_1.jpg",
+    "imagePath": [
+      {
+        "color": "Чорний",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-99X-001-1-638863_2.jpg"
+      },
+      {
+        "color": "Морська хвиля",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-56X-002-1-634061_2.jpg"
+      },
+      {
+        "color": "Червоний",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-23X-002-1-634063_1.jpg"
+      },
+      {
+        "color": "Бежевий",
+        "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-80X-001-1-706727.jpg"
+      }
+    ],
     "sku": "876853",
     "colors": [
-      { "name": "Кремовий", "color": "#FFFACD", "isChecked": true },
+      { "name": "Бежевий", "color": "#FFFACD", "isChecked": true },
       { "name": "Чорний", "color": "#333333", "isChecked": false },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Морська хвиля", "color": "#00BFFF", "isChecked": false },
+      { "name": "Червоний", "color": "#FF0000", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -214,14 +381,32 @@
   },
   {
     "category": "Women",
-    "name": "Джемпер із м'якого трикотажу",
+    "name": "Джемпер в рубчик",
     "price": "7.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/7/3/7394J-MLC-001-1-732887_1.jpg",
+    "imagePath": [
+      {
+        "color": "Бежевий",
+        "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-08X-001-1-727256.jpg"
+      },
+      {
+        "color": "Kавовий",
+        "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-88X-001-1-727259.jpg"
+      },
+      {
+        "color": "Сірий",
+        "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-95X-001-1-713632_1.jpg"
+      },
+      {
+        "color": "Чорний",
+        "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-99X-001-1-721562_1.jpg"
+      }
+    ],
     "sku": "876953",
     "colors": [
       { "name": "Чорний", "color": "#333333", "isChecked": true },
       { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Kавовий", "color": "#A0522D", "isChecked": false },
+      { "name": "Бежевий", "color": "#DEB887", "isChecked": false }
     ],
     "favorite": false,
     "description": [
@@ -235,14 +420,27 @@
   },
   {
     "category": "Women",
-    "name": "Мінісукня",
+    "name": "Пальто з зав’язуваним поясом",
     "price": "27.99",
-    "imagePath": "https://static.sinsay.com/media/catalog/product/3/2/3227X-99X-001-1-735698.jpg",
+    "imagePath": [
+      {
+        "color": "Бежевий",
+        "url": "https://static.sinsay.com/media/catalog/product/6/6/6635J-80X-002-1-723136.jpg"
+      },
+      {
+        "color": "Кремовий",
+        "url": "https://static.sinsay.com/media/catalog/product/6/6/6635J-01X-001-1-723139_1.jpg"
+      },
+      {
+        "color": "Чорний",
+        "url": "https://static.sinsay.com/media/catalog/product/6/6/6635J-99X-002-1-734149_2.jpg"
+      }
+    ],
     "sku": "877953",
     "colors": [
       { "name": "Чорний", "color": "#333333", "isChecked": true },
-      { "name": "Сірий", "color": "#9E9E9E", "isChecked": false },
-      { "name": "Рожевий", "color": "#FF4081", "isChecked": false }
+      { "name": "Кремовий", "color": "#FFEBCD", "isChecked": false },
+      { "name": "Бежевий", "color": "#A0522D", "isChecked": false }
     ],
     "favorite": false,
     "description": [

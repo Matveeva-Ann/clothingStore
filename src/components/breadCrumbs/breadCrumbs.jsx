@@ -1,6 +1,6 @@
-import { BreadCrumbsItem, BreadCrumbsLink, BreadCrumbsList } from "./breadCrumbs.styled";
+import { BreadCrumbsItem, BreadCrumbsItemName, BreadCrumbsLink, BreadCrumbsList } from "./breadCrumbs.styled";
 
-export default function BreadCrumbs({linksArr=[]}) {
+export default function BreadCrumbs({linksArr=[], name=''}) {
 
   return (
     <>
@@ -10,6 +10,7 @@ export default function BreadCrumbs({linksArr=[]}) {
           <BreadCrumbsLink to={`/${elem.link}`} key={elem}>{elem.name}</BreadCrumbsLink>
         </BreadCrumbsItem>
       ))}
+      <BreadCrumbsItemName style={{color: '#3C4242'}}>{name}</BreadCrumbsItemName>
     </BreadCrumbsList>
     </>
   )

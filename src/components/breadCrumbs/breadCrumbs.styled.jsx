@@ -5,6 +5,7 @@ import svg from './svg/left.svg';
 export const BreadCrumbsList = styled.ul`
   display: flex;
   gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 `
 export const BreadCrumbsItem = styled.li`
   list-style: none;
@@ -26,8 +27,25 @@ export const BreadCrumbsItem = styled.li`
   &:first-of-type::before{
       display: none;
     }
-  &:last-child{
-    color: #3C4242;
+`
+export const BreadCrumbsItemName = styled.li`
+  list-style: none;
+  position: relative;
+  margin-left: 30px;
+  color: #807D7E;
+  font-size: 18px;
+  font-weight: 500;
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: -30px;
+    background-image: url(${svg});
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 6px;
+    height: 13px;
   }
 `
 

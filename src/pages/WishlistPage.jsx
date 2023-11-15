@@ -42,10 +42,6 @@ export default function Wishlist({ setBasketCount, setFavoriteCount }) {
     {
       link: '',
       name: 'Home',
-    },
-    {
-      link: 'wishlist',
-      name: 'Wishlist',
     }
   ]
 
@@ -54,7 +50,7 @@ export default function Wishlist({ setBasketCount, setFavoriteCount }) {
      {favorites.length === 0  
        ? <WishListEmpty />
        : <>
-          <BreadCrumbs linksArr={linksArr}></BreadCrumbs>
+          <BreadCrumbs linksArr={linksArr} name={'Wishlist'}></BreadCrumbs>
           <WishlistTitle></WishlistTitle>
           <WishlistList>
             {favorites.map((good, index) => (
