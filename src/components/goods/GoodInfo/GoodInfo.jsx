@@ -21,6 +21,8 @@ import {
   GoodWrapper,
   InputRadio,
   PropertyName,
+  SwipeBtnLeft,
+  SwipeBtnRight,
 } from "./GoodInfo.styled";
 import PropTypes from "prop-types";
 import "./style.css";
@@ -28,6 +30,7 @@ import Loading from "pages/Additionals/Loading/Loading";
 import ErrorRequest from "pages/Additionals/ErrorRequest/ErrorRequest";
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 import defaultImg from '../img/1_480x480.png';
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 const Status = {
   LOADING: "loading",
@@ -35,7 +38,7 @@ const Status = {
   REJECTED: "rejected",
 };
 export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
-  const [good, setGood] = useState(null);
+  const [good, setGood] = useState({});
   const [color, setColor] = useState("");
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -43,13 +46,13 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
   const [linksArr, setLinksArr] = useState([]);
   //параметр з ссилки
   const { goodId } = useParams();
- 
+
   const fetchData = async () => {
     try {
       const data = await sendRequest(urlGoods);
       const cardData = data.find((good) => Number(good.sku) === Number(goodId));
       setGood(cardData);
-      setColor(cardData.colors[0].name);
+      setColor(cardData.colors?.[0]?.name);
       checkFavorite(cardData);
       setStatus(Status.RESOLVED);
       setLinksArr([
@@ -84,7 +87,7 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
   }
 
   // вибір кольору
-  function clickOnCalor(elem) {
+  function clickOnCalor(elem={}) {
     const newColorsArr = good.colors.map((color) => ({
       ...color,
       isChecked: color.color === elem.color,
@@ -113,20 +116,37 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
     // const isInBasket = lSBasket.some(elem => elem.sku === good.sku && elem.color === color);
     let newBasketArr = isInBasket
       ? lSBasket.map((elem) =>
-          elem.sku === good.sku
-            ? { ...elem, amount: elem.amount + 1, color: color }
-            : elem
-        )
+        elem.sku === good.sku
+          ? { ...elem, amount: elem.amount + 1, color: color }
+          : elem
+      )
       : [...lSBasket, { ...good, amount: 1, color: color }];
 
     window.localStorage.setItem("basket", JSON.stringify(newBasketArr));
     setBasketCount(newBasketArr.length);
   }
- 
-  function findImg (imagePathArr){
+
+  function findImg(imagePathArr) {
     const foundImage = imagePathArr.find(elem => elem.color === color);
-    console.log(foundImage)
     return foundImage ? foundImage.url : imagePathArr[0]?.url || defaultImg;
+  }
+
+  function changeImg(good, action) {
+    const index = good.colors?.findIndex(elem => elem.name === color);
+    let nextColorObj = {}
+    switch (action) {
+      case 'decrement':
+        nextColorObj = good.colors[index + 1] || good.colors[0];
+        break;
+      case 'increment':
+        nextColorObj = good.colors[index - 1] || good.colors[good.colors.length - 1];
+        break;
+      default:
+        nextColorObj = good.colors[index].name;
+        break;
+    }
+    clickOnCalor(nextColorObj);
+    setColor(nextColorObj.name);
   }
 
 
@@ -135,94 +155,105 @@ export default function GoodInfo({ setFavoriteCount, setBasketCount }) {
   } else if (status === "resolved") {
     return (
       <>
-      <BreadCrumbs linksArr={linksArr} name={good.name}></BreadCrumbs>
-      <GoodWrapper>
-        <GoodImg
-          src={findImg(good.imagePath)}
-          alt={good.name}
-          width="400px"
-          height="auto"
-        />
-        <GoodInformation>
-          <GoodCategory>For {good.category}</GoodCategory>
-          <h2>{good.name}</h2>
-          <GoodsDescriptionList>
-            {good.description?.map((elem, index) => {
-              return (
-                <GoodDescriptionItem key={index}>{elem}</GoodDescriptionItem>
-              );
-            })}
-          </GoodsDescriptionList>
-          <PropertyName>
-            <AccentText>Колір:</AccentText> {color}
-          </PropertyName>
-          <div>
-            {" "}
-            Варіанти кольорів:
-            <GoodsColorsList>
-              {good.colors.map((elem, index) => (
-                <li
-                  key={index}
-                  title={elem.name}
-                  onClick={() => clickOnCalor(elem)}
-                  style={{ listStyle: "none" }}
-                >
-                  <InputRadio
-                    type="radio"
-                    name="color"
-                    className="inputRadio"
-                    id={index}
-                    defaultChecked={elem.isChecked}
-                  />
-                  <GoodsColorsItem
-                    colorObj={elem}
-                    className="goodsColorsItem"
-                    htmlFor={index}
-                  ></GoodsColorsItem>
-                </li>
-              ))}
-            </GoodsColorsList>
+        <BreadCrumbs linksArr={linksArr} name={good.name}></BreadCrumbs>
+        <GoodWrapper>
+          <div style={{ position: 'relative', overflow: 'hidden', }}>
+            <GoodImg
+              src={findImg(good.imagePath)}
+              alt={good.name}
+              height="530px"
+            />
+            <SwipeBtnLeft onClick={() => changeImg(good, 'increment')} disabled={!good.colors || !good.imagePath}><SlArrowLeft size={20}></SlArrowLeft> </SwipeBtnLeft>
+            <SwipeBtnRight onClick={() => changeImg(good, 'decrement')} disabled={!good.colors || !good.imagePath}><SlArrowRight size={20}></SlArrowRight> </SwipeBtnRight>
           </div>
-          <PropertyName>
-            <AccentText>Ціна:</AccentText> ${good.price}
-          </PropertyName>
+          <GoodInformation>
+            <GoodCategory>For {good.category}</GoodCategory>
+            <h2>{good.name}</h2>
+            <GoodsDescriptionList>
+              {good.description?.map((elem, index) => {
+                return (
+                  <GoodDescriptionItem key={index}>{elem}</GoodDescriptionItem>
+                );
+              })}
+            </GoodsDescriptionList>
 
-          <IconsWrapper>
-            <IconButton
-              onClick={() => toggleFavorite(good.sku)}
-              background="white"
-              ariaLabel={"add to favorite"}
-            >
-              {isFavorite ? (
-                <AiFillHeart
-                  size={iconSize.sm}
-                  style={{ color: "#8A33FD" }}
-                ></AiFillHeart>
-              ) : (
-                <AiOutlineHeart
-                  size={iconSize.sm}
-                  style={{ color: "#807D7E" }}
-                ></AiOutlineHeart>
-              )}{" "}
-            </IconButton>
-            <AddBasketBtn onClick={() => setIsOpenModal(!isOpenModal)}>
-              <BsFillBasket3Fill
-                style={{ color: "#FFFFFF", marginRight: "10px" }}
-                size="16px"
-              ></BsFillBasket3Fill>{" "}
-              Додати в кошик
-            </AddBasketBtn>
-          </IconsWrapper>
-        </GoodInformation>
-        {isOpenModal && (
-          <ModalAddToBasket
-            onClickBasket={addToBasket}
-            onClick={() => setIsOpenModal(!isOpenModal)}
-            good={good}
-          ></ModalAddToBasket>
-        )}
-      </GoodWrapper>
-    </>);
+            {good.colors &&
+              <>
+                <PropertyName>
+                  <AccentText>Колір:</AccentText> {color}
+                </PropertyName>
+                <div>
+                  Варіанти кольорів:
+                  <GoodsColorsList>
+                    {good.colors.map((elem, index) => (
+                      <li
+                        key={index}
+                        title={elem.name}
+                        onClick={() => clickOnCalor(elem)}
+                        style={{ listStyle: "none" }}
+                      >
+                        <InputRadio
+                          type="radio"
+                          name="color"
+                          className="inputRadio"
+                          id={index}
+                          readOnly
+                          checked={elem.isChecked}
+                        />
+                        <GoodsColorsItem
+                          colorObj={elem}
+                          className="goodsColorsItem"
+                          htmlFor={index}
+                        ></GoodsColorsItem>
+                      </li>
+                    ))}
+                  </GoodsColorsList>
+                </div>
+              </>
+
+            }
+
+            <PropertyName>
+              <AccentText>Ціна:</AccentText> ${good.price}
+            </PropertyName>
+
+            <IconsWrapper>
+              <IconButton
+                onClick={() => toggleFavorite(good.sku)}
+                background="white"
+                ariaLabel={"add to favorite"}
+              >
+                {isFavorite ? (
+                  <AiFillHeart
+                    size={iconSize.sm}
+                    style={{ color: "#8A33FD" }}
+                  ></AiFillHeart>
+                ) : (
+                  <AiOutlineHeart
+                    size={iconSize.sm}
+                    style={{ color: "#807D7E" }}
+                  ></AiOutlineHeart>
+                )}{" "}
+              </IconButton>
+              <AddBasketBtn onClick={() => setIsOpenModal(!isOpenModal)}>
+                <BsFillBasket3Fill
+                  style={{ color: "#FFFFFF", marginRight: "10px" }}
+                  size="16px"
+                ></BsFillBasket3Fill>{" "}
+                Додати в кошик
+              </AddBasketBtn>
+            </IconsWrapper>
+          </GoodInformation>
+          {isOpenModal && (
+            <ModalAddToBasket
+              onClickBasket={addToBasket}
+              onClick={() => setIsOpenModal(!isOpenModal)}
+              good={good}
+              selectedColor = {color}
+            ></ModalAddToBasket>
+          )}
+        </GoodWrapper>
+      </>);
   } else if (status === "rejected") {
     return <ErrorRequest></ErrorRequest>;
   }

@@ -11,7 +11,7 @@ export default function GoodItemLittle({ good, deleteFavorite, isBasket, deleteG
   return (
     <LittleGoodCard>
       <LittleGoodLink href="">
-        <LittleGoodImg src={good.imagePath} alt={good.name} />
+        <LittleGoodImg src={good.imagePath.find(img=> img.color === good.color).url} alt={good.name} />
       </LittleGoodLink>
       <LittleTextWrapper>
         <LittleGoodName>{good.name}</LittleGoodName>

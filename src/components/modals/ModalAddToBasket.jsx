@@ -6,7 +6,7 @@ import ModalHeader from "./modalElements/ModalHeader";
 import ModalWrapper from "./modalElements/ModalWrapper";
 import PropTypes from 'prop-types';
 
-export default function ModalAddToBasket({ onClick, good, onClickBasket, countBasket }) {
+export default function ModalAddToBasket({ onClick, good, onClickBasket, countBasket, selectedColor }) {
   function addToBasket(){
     onClickBasket();
     onClick();
@@ -15,7 +15,7 @@ export default function ModalAddToBasket({ onClick, good, onClickBasket, countBa
     <ModalWrapper onClick={onClick}>
       <ModalHeader title='Add Product to basket'></ModalHeader>
       <ModalBody>
-        <GoodItemLittle good={good} modalAddToBasket={true} countBasket={countBasket}></GoodItemLittle>
+        <GoodItemLittle good={{...good, color: selectedColor}} modalAddToBasket={true} countBasket={countBasket}></GoodItemLittle>
       </ModalBody>
       <ModalFooter>
         <Button onClick={addToBasket} btnColor='baseColor'>ADD TO BASKET</Button>

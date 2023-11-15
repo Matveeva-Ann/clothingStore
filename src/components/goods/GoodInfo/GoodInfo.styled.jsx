@@ -74,6 +74,7 @@ export const PropertyName = styled.p`
   color: ${props => props.theme.colors.black};
   font-weight: 700;
   margin: 20px 0;
+  min-width: 280px;
 `
 export const AccentText = styled.span`
   color: ${props => props.theme.colors.accentText};
@@ -99,4 +100,31 @@ export const AddBasketBtn = styled.button`
    &:active{
      transform: scale(1.02);
    }
+`
+
+export const SwipeBtn = styled.button`
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+`
+export const SwipeBtnLeft = styled.button`
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 100%;
+  top: 0;
+  left: 10px;
+`
+export const SwipeBtnRight = styled.button`
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  height: 100%;
+  border: none;
+  outline: none;
+  top: 0;
+  right: 10px;
 `

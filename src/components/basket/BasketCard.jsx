@@ -5,7 +5,7 @@ export default function BasketCard({ good }) {
 
   return (
     <BasketCardWrapper>
-      <BasketCardImg src={good.imagePath} alt={good.name} />
+      <BasketCardImg src={good.imagePath.find(img=> img.color === good.color).url} alt={good.name} />
       <div>
         <BasketCardName>{good.name}</BasketCardName>
         <BasketCardInfo >Color: {good.color || 'black'}</BasketCardInfo>
