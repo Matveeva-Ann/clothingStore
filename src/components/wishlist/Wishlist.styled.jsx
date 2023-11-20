@@ -26,6 +26,7 @@ export const DescriptionList = styled.ul`
   padding: 0;
   flex-grow: 1;
   flex-basis: 0;
+  min-width: 350px;
 `
 export const DescriptionListItem = styled.li`
   list-style: none;

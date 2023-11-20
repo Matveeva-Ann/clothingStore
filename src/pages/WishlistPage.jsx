@@ -1,44 +1,39 @@
 import WishlistTitle from "components/wishlist/WishlistTitle";
-import { useLocalStorage } from "helpers/hooks/useLocalStorage";
-import { useState } from "react";
 import { WishlistList, WishlistPoint, } from "../components/wishlist/Wishlist.styled";
 import WishListEmpty from "./Additionals/wishListEmpty/WishListEmpty";
 import WishlistItem from "../components/wishlist/WishlistItem";
-import PropTypes from 'prop-types';
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
+import { useDispatch, useSelector } from 'react-redux';
+import { favoriteGoods } from "redux/favoriteSlice";
+import { basketGoods } from "redux/basketSlice";
 
-export default function Wishlist({ setBasketCount, setFavoriteCount }) {
-  const [favorites, setFavorites] =
-    useState(JSON.parse(window.localStorage.getItem("favorite"))) || [];
-  const [, setLocalStorageCollection] = useLocalStorage("favorite");
+export default function Wishlist() {
+  const favoriteArr = useSelector(state => state.favorite)
+  const dispatch = useDispatch();
+  const basketArr = useSelector(state => state.basket);
 
   // видалити з обраного
-  function deleteFavorite(index) {
-    const updateArr = [...favorites];
-    updateArr[index] = {
-      ...updateArr[index],
-      favorite: !updateArr[index].favorite,
-    };
-    const favoritesArr = updateArr.filter((el) => el.favorite);
-    setFavorites(favoritesArr);
-    setFavoriteCount(favoritesArr.length);
-    setLocalStorageCollection(favoritesArr);
+  function deleteFavorite(sku) {
+    const updateArr = [...favoriteArr];
+    const index = updateArr.findIndex(elem => elem.sku === sku)
+    updateArr.splice(index, 1)
+    dispatch(favoriteGoods(updateArr))
   }
 
   // додати в корзину
   function addGoodToBasket(good) {
-    good.amount = 1;
-    const basketArr = JSON.parse(window.localStorage.getItem("basket")) || [];
-    const existingItem = basketArr.find((elem) => elem.sku === good.sku);
-
-    existingItem ? existingItem.amount++ : basketArr.push(good);
-
-    window.localStorage.setItem("basket", JSON.stringify(basketArr));
-    setBasketCount(
-      basketArr.reduce((accum, elem) => accum + Number(elem.amount), 0)
-    );
+    const goodUpdate = { ...good, amount: 1 };
+    const newBasketArr = [...basketArr];
+    const existingItemIndex = newBasketArr.findIndex((elem) => elem.sku === goodUpdate.sku);
+    if (existingItemIndex !== -1) {
+      newBasketArr[existingItemIndex] = { ...newBasketArr[existingItemIndex], amount: newBasketArr[existingItemIndex].amount + 1 };
+    } else {
+      newBasketArr.push(goodUpdate);
+    }
+    dispatch(basketGoods(newBasketArr));
   }
-  const linksArr =[
+
+  const linksArr = [
     {
       link: '',
       name: 'Home',
@@ -46,30 +41,25 @@ export default function Wishlist({ setBasketCount, setFavoriteCount }) {
   ]
 
   return (
-   <>
-     {favorites.length === 0  
-       ? <WishListEmpty />
-       : <>
+    <>
+      {favoriteArr.length === 0
+        ? <WishListEmpty />
+        : <>
           <BreadCrumbs linksArr={linksArr} name={'Wishlist'}></BreadCrumbs>
           <WishlistTitle></WishlistTitle>
           <WishlistList>
-            {favorites.map((good, index) => (
+            {favoriteArr.map((good, index) => (
               <WishlistPoint key={good.sku}>
                 <WishlistItem
                   good={good}
-                  deleteFavorite={() => deleteFavorite(index)}
+                  deleteFavorite={() => deleteFavorite(good.sku)}
                   addGoodToBasket={() => addGoodToBasket(good)}
                 ></WishlistItem>
               </WishlistPoint>
             ))}
           </WishlistList>
         </>
-     }
-   </>
+      }
+    </>
   );
-}
-
-Wishlist.propTypes = {
-  setBasketCount: PropTypes.func,
-  setFavoriteCount: PropTypes.func,
 }

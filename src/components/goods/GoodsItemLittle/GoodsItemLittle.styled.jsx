@@ -13,9 +13,10 @@ export const LittleGoodLink = styled.a`
 `
 
 export const LittleGoodImg = styled.img`
-  max-width: 115px;
-  max-height: 150px;
+  max-width: 160px;
+  height: auto;
   border-radius: 10px;
+  object-fit: cover;
 `
 
 export const LittleGoodName = styled.h3`

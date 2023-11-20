@@ -13,11 +13,11 @@ export default function WishlistItem({ good, deleteFavorite, addGoodToBasket }) 
         <RxCross2 size={iconSize.md} style={{ color: '#807D7E' }}></RxCross2>
       </IconButton>
       <CardLink to={`/goods/${good.sku}`}>
-        <WishItemImg src={good.imagePath} alt={good.name} />
+        <WishItemImg src={good.imagePath.find(img=> img.color === good.color).url} alt={good.name} />
         <DescriptionList>
           <DescriptionListItem>{good.name}</DescriptionListItem>
           <DescriptionListItem>Color: <DescriptionListItemData>{good.colors[0].name}</DescriptionListItemData></DescriptionListItem>
-          <DescriptionListItem>Description: <DescriptionListItemData>{good.description.join(", ")}</DescriptionListItemData></DescriptionListItem>
+          <DescriptionListItem>Description: <DescriptionListItemData>{good.description?.join(", ")}</DescriptionListItemData></DescriptionListItem>
         </DescriptionList>
       </CardLink>
       <WishItemPrice>${good.price}</WishItemPrice>

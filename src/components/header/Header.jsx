@@ -4,12 +4,10 @@ import GoodsCategories from "./GoodsCategories";
 import { CiMenuBurger } from "react-icons/ci";
 import Logo from "./Logo";
 import Search from "./Search";
-
 import { ButtonsWrapper, CategoriesListBurger, HeadersElemWrapper, HeaderStyle } from "./Header.styled";
 import PropTypes from 'prop-types';
 
-export default function Header({favoriteCount, setFavoriteCount, basketCount, setBasketCount}) {
-
+export default function Header() {
   return (
     <HeaderStyle>
       <HeadersElemWrapper>
@@ -20,17 +18,17 @@ export default function Header({favoriteCount, setFavoriteCount, basketCount, se
         </CategoriesListBurger>
         <Search></Search>
         <ButtonsWrapper>
-          <Favorite favoriteCount={favoriteCount} setFavoriteCount={setFavoriteCount} setBasketCount={setBasketCount}></Favorite>
-          <Cart basketCount={basketCount} setBasketCount={setBasketCount}></Cart>
+          <Favorite></Favorite>
+          <Cart></Cart>
         </ButtonsWrapper>
       </HeadersElemWrapper>
     </HeaderStyle>
   )
 }
 
+
 Header.propTypes = {
-  setFavoriteCount: PropTypes.func,
+
   setBasketCount: PropTypes.func,
-  favoriteCount: PropTypes.number,
   basketCount: PropTypes.number,
 }

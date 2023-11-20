@@ -7,9 +7,8 @@ import { GoodImg, GoodLink, GoodName, GoodPrice, IconsWrapper, InfoBlock } from 
 import PropTypes from 'prop-types';
 import IconButton from "containers/IconButton/IconButton";
 import defaultImg from '../img/1_480x480.png';
-export default function GoodItem({ good, onClickFavorite, onClickBasket, countBasket }) {
+export default function GoodItem({ good, onClickFavorite }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
-
   function toggleModal() {
     setIsOpenModal(!isOpenModal);
   }
@@ -35,7 +34,7 @@ export default function GoodItem({ good, onClickFavorite, onClickBasket, countBa
         </IconsWrapper>
       </InfoBlock>
       {isOpenModal &&
-        <ModalAddToBasket onClick={toggleModal} good={good} onClickBasket={onClickBasket} countBasket={countBasket}></ModalAddToBasket>
+        <ModalAddToBasket selectedColor = {good.colors[0].name} onClick={toggleModal} good={good}></ModalAddToBasket>
       }
     </div>
   )
@@ -44,6 +43,4 @@ export default function GoodItem({ good, onClickFavorite, onClickBasket, countBa
 GoodItem.propTypes = {
   good: PropTypes.object,
   onClick: PropTypes.func,
-  onClickBasket: PropTypes.func,
-  countBasket: PropTypes.func,
 }

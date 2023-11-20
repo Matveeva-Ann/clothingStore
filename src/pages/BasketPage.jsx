@@ -1,18 +1,17 @@
 import BasketEmpty from "pages/Additionals/BasketEmpty/BasketEmpty";
 import BasketInfoRegister from "components/basket/BasketInfoRegister";
 import BasketTable from "components/basket/BasketTable";
-import { useState } from "react";
-import PropTypes from 'prop-types';
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
+import { useDispatch, useSelector } from 'react-redux';
+import { basketGoods } from "redux/basketSlice";
 
-export default function Basket({setBasketCount}) {
-  const [basketGoods, setBasketGoods] = useState(JSON.parse(window.localStorage.getItem("basket")) || []);
-  
-  function deleteFromBasket(sku){
-    const updatedBasket = basketGoods.filter(elem => elem.sku !== sku);
-    window.localStorage.setItem('basket', JSON.stringify(updatedBasket))
-    setBasketGoods(updatedBasket);
-    setBasketCount(updatedBasket.length)
+export default function Basket() {
+  const dispatch = useDispatch();
+  const basketArr = useSelector(state => state.basket);
+
+  function deleteFromBasket(good){
+    const updatedBasket = basketArr.filter((elem) => elem.sku !== good.sku ? true : elem.color !== good.color);
+    dispatch(basketGoods(updatedBasket))
   }
   const linksArr =[
     {
@@ -23,20 +22,16 @@ export default function Basket({setBasketCount}) {
   
   return (
     <>
-      {basketGoods.length === 0 
+      {basketArr.length === 0 
         ? (<BasketEmpty></BasketEmpty>) 
         : (
            <>
              <BreadCrumbs linksArr={linksArr} name={'Add To Cart'}></BreadCrumbs>
              <BasketInfoRegister></BasketInfoRegister>
-             <BasketTable basketGoods={basketGoods} deleteFromBasket={deleteFromBasket}></BasketTable>
+             <BasketTable basketGoods={basketArr} deleteFromBasket={deleteFromBasket}></BasketTable>
            </>
         )
       }
     </>
   );
-}
-
-Basket.propTypes = {
-  setBasketCount: PropTypes.func,
 }

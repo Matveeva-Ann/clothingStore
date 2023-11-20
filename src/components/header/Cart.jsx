@@ -2,10 +2,12 @@ import { iconSize } from "constants";
 import IconButton from "containers/IconButton/IconButton";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CounterGoods } from "./Header.styled";
-import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
-export default function Cart({ basketCount }) {
+export default function Cart() {
+  const basket = useSelector(state => state.basket);
+  const basketCount = basket.reduce((accum, elem)=> accum + elem.amount, 0);
 
   return (
     <NavLink to={`/basket`}>
@@ -17,10 +19,4 @@ export default function Cart({ basketCount }) {
       )}
     </NavLink>
   );
-}
-
-
-Cart.propTypes = {
-  setBasketCount: PropTypes.func,
-  basketCount: PropTypes.number,
 }

@@ -9,11 +9,11 @@ import { useState } from "react";
 
 export default function BasketTable({ basketGoods, deleteFromBasket }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [goodSku, setGoodSku] = useState(0);
+  const [goodItem, setGoodItem] = useState(0);
 
-  function onClickDelete (sku){
+  function onClickDelete (good){
     setModalIsOpen(true);
-    setGoodSku(sku)
+    setGoodItem(good)
   }
 
   return (
@@ -30,7 +30,7 @@ export default function BasketTable({ basketGoods, deleteFromBasket }) {
       </THeader>
       <Tbody>
         {basketGoods.map((good) => (
-          <TBodyTr key={good.sku}>
+          <TBodyTr key={good.sku + good.color}>
             <TBodyTd>
               <CardLink to={`/goods/${good.sku}`}>
                 <BasketCard good={good}></BasketCard>
@@ -41,18 +41,20 @@ export default function BasketTable({ basketGoods, deleteFromBasket }) {
             <TBodyTd style={{ color: '#BEBCBD', textTransform: 'uppercase' }}>{good.shipping || 'FREE'}</TBodyTd>
             <TBodyTd>${parseFloat((good.price * good.amount).toFixed(2))}</TBodyTd>
             <TBodyTd>
-              <IconButton background='white' onClick={() => onClickDelete(good.sku)} ariaLabel='delete good from basket' style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }}>
+              <IconButton background='white' onClick={() => onClickDelete(good)} ariaLabel='delete good from basket' style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }}>
                 <RiDeleteBinLine size={iconSize.sm} style={{ color: '#8A33FD' }}></RiDeleteBinLine>
               </IconButton>
             </TBodyTd>
-            { modalIsOpen && <ModalRemoveFromBasket 
-                              onClickDelete={() => deleteFromBasket(goodSku)} 
-                              setModalIsOpen={setModalIsOpen}>
-                           </ModalRemoveFromBasket>
-           }
+          
           </TBodyTr>
         ))}
       </Tbody>
+      { modalIsOpen && 
+         <ModalRemoveFromBasket 
+            onClickDelete={() => deleteFromBasket(goodItem)} 
+            setModalIsOpen={setModalIsOpen}>
+         </ModalRemoveFromBasket>
+      }
     </Table>
   );
 }
@@ -60,4 +62,4 @@ export default function BasketTable({ basketGoods, deleteFromBasket }) {
 BasketCard.propTypes = {
   basketGoods: PropTypes.object,
   deleteFromBasket: PropTypes.func,
-}
+} 

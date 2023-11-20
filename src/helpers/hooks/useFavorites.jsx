@@ -8,7 +8,7 @@ import { useState } from 'react';
     const filteredState = updatedState.filter((el) => el.favorite);
   
     setState(filteredState);
-    window.localStorage.setItem(key, JSON.stringify(state))
+    // window.localStorage.setItem(key, JSON.stringify(state))
     return [state, setState];
   }
 

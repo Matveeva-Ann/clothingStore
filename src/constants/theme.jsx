@@ -20,7 +20,7 @@ export const theme = Object.freeze (
       subTitleLittle: '28px',
       large: '32px',
       subTitle: '34px',
-      extraLarge: '50px',
+      extraLarge: '60px',
       megaLarge: '94px'
     }
   }

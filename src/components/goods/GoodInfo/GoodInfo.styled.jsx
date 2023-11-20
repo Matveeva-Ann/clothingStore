@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BsFillBasket3Fill } from 'react-icons/bs';
 
 export const GoodWrapper = styled.div`
   display: flex;
@@ -127,4 +128,9 @@ export const SwipeBtnRight = styled.button`
   outline: none;
   top: 0;
   right: 10px;
+`
+export const BsFillBasket3FillSVG = styled(BsFillBasket3Fill)`
+  color: "#FFFFFF";
+  margin-right: 10px;
+  font-size: 16px;
 `

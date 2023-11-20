@@ -28,6 +28,7 @@
       { "name": "Оливковий", "color": "#556B2F", "isChecked": false },
       { "name": "Чорний", "color": "#000000", "isChecked": false }
     ],
+    "color": "Cірий",
     "favorite": false,
     "description": [
       "застібка на кнопки та блискавицю",
@@ -60,6 +61,7 @@
       }
     ],
     "sku": "345678",
+    "color": "Темно-синій",
     "colors": [
       { "name": "Темно-синій", "color": "#191970", "isChecked": true },
       { "name": "Бежевий", "color": "#A0522D", "isChecked": false },
@@ -89,10 +91,11 @@
         "url": "https://static.sinsay.com/media/catalog/product/2/5/2598X-MLC-002-1-726734.jpg"
       }
     ],
+    "color": "Рожевий",
     "sku": "901234",
     "colors": [
-      { "name": "Сірий", "color": "#A6ACAF", "isChecked": false },
-      { "name": "Рожевий", "color": "#CA7EF8", "isChecked": false }
+      { "name": "Рожевий", "color": "#CA7EF8", "isChecked": true },
+      { "name": "Сірий", "color": "#A6ACAF", "isChecked": false }
     ],
     "favorite": false,
     "description": ["довжина міді", "на бретельках", "тканина в рубчик"],
@@ -122,6 +125,7 @@
       { "name": "Коричневувато-зелений", "color": "#556B2F", "isChecked": false },
       { "name": "Нюдовий", "color": "#EEE8AA", "isChecked": false }
     ],
+    "color": "Темно синій",
     "favorite": false,
     "description": [
       "100% бавовна",
@@ -156,6 +160,7 @@
       { "name": "Бежевий", "color": "#CD853F", "isChecked": false },
       { "name": "Сірий", "color": "#9E9E9E", "isChecked": false }
     ],
+    "color": "Чорний",
     "favorite": false,
     "description": ["декоративна нашивка"],
     "size": ["xs", "s", "m", "l", "xl"]
@@ -180,10 +185,11 @@
     ],
     "sku": "432109",
     "colors": [
-      { "name": "Бежевий", "color": "#D2B48C", "isChecked": false },
+      { "name": "Бежевий", "color": "#D2B48C", "isChecked": true },
       { "name": "Блакитний", "color": "#4682B4", "isChecked": false },
       { "name": "Пастельний рожевий", "color": "#FFB6C1", "isChecked": false }
     ],
+    "color": "Бежевий",
     "favorite": false,
     "description": [
       "класичний крій",
@@ -218,6 +224,7 @@
       { "name": "Нюдовий", "color": "#F08080", "isChecked": false },
       { "name": "Рожевий", "color": "#FF00FF", "isChecked": false }
     ],
+    "color": "Темно-синій",
     "favorite": false,
     "description": [
       "зручний капюшон",
@@ -250,6 +257,7 @@
         "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-59X-020-1-395805_18.jpg"
       }
     ],
+    "color": "Фуксія",
     "sku": "876543",
     "colors": [
       { "name": "Фуксія", "color": "#ff00ff", "isChecked": true },
@@ -281,6 +289,7 @@
         "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-90J-001-1-731489_1.jpg"
       }
     ],
+    "color": "Сірий",
     "sku": "876553",
     "colors": [
       { "name": "Темно-сірий", "color": "#808080", "isChecked": true },
@@ -323,6 +332,7 @@
         "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-99X-001-1-729059.jpg"
       }
     ],
+    "color": "Kавовий",
     "sku": "876753",
     "colors": [
       { "name": "Kавовий", "color": "#A0522D", "isChecked": true },
@@ -362,6 +372,7 @@
         "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-80X-001-1-706727.jpg"
       }
     ],
+    "color": "Чорний",
     "sku": "876853",
     "colors": [
       { "name": "Бежевий", "color": "#FFFACD", "isChecked": true },
@@ -401,6 +412,7 @@
         "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-99X-001-1-721562_1.jpg"
       }
     ],
+    "color": "Бежевий",
     "sku": "876953",
     "colors": [
       { "name": "Чорний", "color": "#333333", "isChecked": true },
@@ -436,6 +448,7 @@
         "url": "https://static.sinsay.com/media/catalog/product/6/6/6635J-99X-002-1-734149_2.jpg"
       }
     ],
+    "color": "Бежевий",
     "sku": "877953",
     "colors": [
       { "name": "Чорний", "color": "#333333", "isChecked": true },

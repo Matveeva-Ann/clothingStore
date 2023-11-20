@@ -57,6 +57,5 @@ GoodItemLittle.propTypes = {
   onClick: PropTypes.func,
   isBasket: PropTypes.bool,
   deleteGood: PropTypes.func,
-  setBasketCount: PropTypes.func,
   modalAddToBasket: PropTypes.bool,
 }
