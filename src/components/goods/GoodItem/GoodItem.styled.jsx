@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { FaCheck } from "react-icons/fa";
 
 export const GoodLink = styled(Link) `
   cursor: pointer;
@@ -40,4 +41,23 @@ export const GoodPrice = styled.span `
 export const IconsWrapper = styled.div`
   display: flex;
   gap: 10px;
+`
+export const IconsCheckWrapper = styled.div`
+  position: relative;
+`
+export const FaCheckStyleWrapper = styled.div`
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: green;
+  right: -5px;
+  top: -1px;
+  
+`
+export const FaCheckStyle = styled(FaCheck)`
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  vertical-align: text-top;
 `

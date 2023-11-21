@@ -11,6 +11,9 @@ export const theme = Object.freeze (
       backgroundAccent: '#F6F6F6',
       backgroundAccentHover: '#e0e0e0',
     },
+    toastColor: {
+      toastColor: '#8A33FD',
+    },
     spacing: (value) => `${4 * value}px`,
     fontSize: {
       small: '14px',

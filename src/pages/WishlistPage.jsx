@@ -6,11 +6,13 @@ import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 import { useDispatch, useSelector } from 'react-redux';
 import { favoriteGoods } from "redux/favoriteSlice";
 import { basketGoods } from "redux/basketSlice";
+import { toast } from 'react-toastify';
 
 export default function Wishlist() {
   const favoriteArr = useSelector(state => state.favorite)
   const dispatch = useDispatch();
   const basketArr = useSelector(state => state.basket);
+
 
   // видалити з обраного
   function deleteFavorite(sku) {
@@ -31,6 +33,16 @@ export default function Wishlist() {
       newBasketArr.push(goodUpdate);
     }
     dispatch(basketGoods(newBasketArr));
+    toast.success('🎉  Ваш товар успішно додано в кошик!', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      style: {backgroundColor: '#8A33FD', fontSize: '20px', textAlign: 'center'}
+      });
   }
 
   const linksArr = [

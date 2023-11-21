@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FaCheck } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export const WishItemWrapper = styled.div`
@@ -49,6 +50,7 @@ export const WishItemPrice = styled.span`
   flex-basis: 0;
 `
 export const WishItemBtn = styled.button`
+  position: relative;
   cursor: pointer;
   padding: 8px 12px;
   background-color: ${props => props.theme.colors.baseColor};
@@ -78,4 +80,20 @@ export const Title = styled.h2`
   font-weight: 600;
   letter-spacing: 0.56px;
   margin: 50px 100px;
+`
+export const FaCheckStyleWrapper = styled.div`
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: green;
+  left: 20px;
+  top: 3px;
+  
+`
+export const FaCheckStyle = styled(FaCheck)`
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  vertical-align: text-top;
 `

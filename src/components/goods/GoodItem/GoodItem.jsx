@@ -1,14 +1,23 @@
 import ModalAddToBasket from "components/modals/ModalAddToBasket";
 import { iconSize } from "constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BsFillBasket3Fill } from "react-icons/bs";
-import { GoodImg, GoodLink, GoodName, GoodPrice, IconsWrapper, InfoBlock } from "./GoodItem.styled";
+import { FaCheckStyle, FaCheckStyleWrapper, GoodImg, GoodLink, GoodName, GoodPrice, IconsCheckWrapper, IconsWrapper, InfoBlock } from "./GoodItem.styled";
 import PropTypes from 'prop-types';
 import IconButton from "containers/IconButton/IconButton";
 import defaultImg from '../img/1_480x480.png';
+import { useSelector } from "react-redux";
 export default function GoodItem({ good, onClickFavorite }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isGoodInBasket, setIsGoodInBasket] = useState(false);
+
+  const goodsInBasket = useSelector(state => state.basket)
+
+  useEffect(()=>{
+    setIsGoodInBasket(goodsInBasket.some(elem => elem.sku === good.sku))
+  }, [goodsInBasket, good.sku])
+
   function toggleModal() {
     setIsOpenModal(!isOpenModal);
   }
@@ -29,7 +38,13 @@ export default function GoodItem({ good, onClickFavorite }) {
             }
           </IconButton>
           <IconButton background='white' onClick={toggleModal} ariaLabel={'add to basket'}> 
-            <BsFillBasket3Fill style={{ color: '#807D7E' }} size={iconSize.sm}></BsFillBasket3Fill>
+            {isGoodInBasket
+               ? <IconsCheckWrapper title='товар вже в кошику'>
+                    <BsFillBasket3Fill style={{ color: '#807D7E' }} size={iconSize.sm}></BsFillBasket3Fill>
+                    <FaCheckStyleWrapper><FaCheckStyle></FaCheckStyle></FaCheckStyleWrapper>
+                  </IconsCheckWrapper> 
+               : <BsFillBasket3Fill style={{ color: '#807D7E' }} title='додати в кошик' size={iconSize.sm}></BsFillBasket3Fill> 
+            }
           </IconButton>
         </IconsWrapper>
       </InfoBlock>
