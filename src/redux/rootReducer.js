@@ -6,6 +6,7 @@ import { favoriteReducer } from './favoriteSlice';
 import { basketReducer } from './basketSlice';
 import { goodsReducer } from './goodsSlice';
 import { modalAddToBasketReducer } from './modalAddToBasketSlice';
+import { userDataReducer } from './userData';
 
 const persistConfig = {
   key: 'root',
@@ -17,6 +18,7 @@ export const rootReducer = combineReducers({
   favorite: favoriteReducer,
   basket: basketReducer,
   goods: goodsReducer,
+  userData: userDataReducer,
   modalAddToBasket: modalAddToBasketReducer,
   [goodsApi.reducerPath]: goodsApi.reducer,
 });

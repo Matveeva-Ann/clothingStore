@@ -1,7 +1,6 @@
 import { BreadCrumbsItem, BreadCrumbsItemName, BreadCrumbsLink, BreadCrumbsList } from "./breadCrumbs.styled";
 
 export default function BreadCrumbs({linksArr=[], name=''}) {
-
   return (
     <>
       <BreadCrumbsList>

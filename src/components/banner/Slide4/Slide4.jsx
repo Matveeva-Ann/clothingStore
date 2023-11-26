@@ -9,9 +9,9 @@ export default function Slide4() {
         <PromotionTitle>На старт, увага, зима!</PromotionTitle>
         <ClothingDescription>Одяг для всієї родини</ClothingDescription>
         <LinkButtonWrapper>
-           <LinkButton size="big" color='#fff' textColor='black' link='/Men'>For Men</LinkButton>
-           <LinkButton size="big"  color='#fff' textColor='black' link='/Women'>For Women</LinkButton>
-           <LinkButton size="big"  color='#fff' textColor='black' link='/Children'>For Children</LinkButton>
+           <LinkButton size="big" color='#fff' colorText='black' link='/Men'>For Men</LinkButton>
+           <LinkButton size="big"  color='#fff' colorText='black' link='/Women'>For Women</LinkButton>
+           <LinkButton size="big"  color='#fff' colorText='black' link='/Children'>For Children</LinkButton>
         </LinkButtonWrapper>
       
       </SlideContent>

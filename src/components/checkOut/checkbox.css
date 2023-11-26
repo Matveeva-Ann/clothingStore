@@ -1,0 +1,6 @@
+.checkbox:checked + .labelCheckbox::before{
+  background-color: #8A33FD;
+}
+.checkbox:checked + .labelCheckbox::after{
+ display: inline-block;
+}

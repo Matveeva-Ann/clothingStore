@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import img from "../img/SI_header_desktop_g_przygotuj_sie_na_zime.jpg";
 
-export const SlideStyle = styled.div `
+export const SlideStyle = styled.div`
   background-image: url(${img});
   width: 100%;
   min-height: 600px;
@@ -24,7 +24,7 @@ export const SlideStyle = styled.div `
     z-index: 1;
   }
 `
-export const SlideContent = styled.div `
+export const SlideContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +38,7 @@ export const LinkButtonWrapper = styled.div`
   justify-content: center;
   gap: 20px;
 `
-export const PromotionTitle = styled.h2 `
+export const PromotionTitle = styled.h2`
   font-size: ${props => props.theme.fontSize.megaLarge};
   color: white;
   line-height: 93px;
@@ -52,7 +52,7 @@ export const PromotionTitle = styled.h2 `
     line-height: 50px;
   }
 `
-export const ClothingDescription = styled.p `
+export const ClothingDescription = styled.p`
   font-size: ${props => props.theme.fontSize.medium};
   color: white;
   text-align: center;

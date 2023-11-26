@@ -7,6 +7,8 @@ import GoodsList from './components/goods/GoodsList/GoodsList';
 import Layout from 'Layout';
 import GoodPage from 'pages/GoodPage.jsx';
 import LoginPage from 'pages/LoginPage';
+import CheckOutPage from 'pages/CheckOutPage';
+import SentSuccessfully from 'pages/Additionals/SentSuccessfully/SentSuccessfully';
 
 export default function AppRoutes (){
   
@@ -20,9 +22,11 @@ export default function AppRoutes (){
         <Route path='Men' element={<GoodsList category={'Men'}></GoodsList>} />
         <Route path='Women' element={<GoodsList category={'Women'}></GoodsList>} />
         <Route path='Children' element={<GoodsList category={'Children'}></GoodsList>} />
+        <Route path='CheckOutPage' element={<CheckOutPage></CheckOutPage>} />
         <Route path='wishlist' element={<Wishlist></Wishlist>} />
         <Route path='basket' element={<Basket></Basket>} />
         <Route path='loginPage' element={<LoginPage></LoginPage>} />
+        <Route path='sentSuccessfully' element={<SentSuccessfully></SentSuccessfully>} />
         <Route path='*' element={<ErrorPageNotFound/>}/>
       </Route>
     </Routes>

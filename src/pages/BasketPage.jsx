@@ -4,6 +4,7 @@ import BasketTable from "components/basket/BasketTable";
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 import { useDispatch, useSelector } from 'react-redux';
 import { basketGoods } from "redux/basketSlice";
+import Total from "components/basket/Total";
 
 export default function Basket() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function Basket() {
              <BreadCrumbs linksArr={linksArr} name={'Add To Cart'}></BreadCrumbs>
              <BasketInfoRegister></BasketInfoRegister>
              <BasketTable basketGoods={basketArr} deleteFromBasket={deleteFromBasket}></BasketTable>
+             <Total></Total>
            </>
         )
       }

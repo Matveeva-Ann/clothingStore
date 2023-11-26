@@ -9,6 +9,7 @@ export const theme = Object.freeze (
       accentText: '#3C4242',
       blackText: '#2A2F2F',
       backgroundAccent: '#F6F6F6',
+      backgroundField: '#ececec',
       backgroundAccentHover: '#e0e0e0',
     },
     toastColor: {

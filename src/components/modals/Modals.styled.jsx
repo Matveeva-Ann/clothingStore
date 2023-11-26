@@ -15,6 +15,7 @@ export const ModalBg = styled.div`
    right: 0;
    bottom: 0;
    background-color: rgba(0, 0, 0, 0.434); 
+   z-index: 2;
 `
 const modalAnimation = keyframes`
    0% {
