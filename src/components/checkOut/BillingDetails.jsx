@@ -30,6 +30,8 @@ const SchemaDataOrder = Yup.object().shape({
     .min(2, '*Введіть повнк назву міста')
     .max(30, '*Максимальна кількість символів 30')  
     .required('*Це поле обов’язкове для заповнення'),
+  state: Yup.string()  
+    .oneOf(['Ukraine', 'Poland', 'Germany', 'GB'], '*Виберіть одну з доступних країн'),
   street: Yup.string()
     .min(2, '*Назва вулиці має бути мінімум 2 символи')
     .max(30, '*Максимальна кількість символів 30')  
@@ -52,9 +54,8 @@ export default function BillingDetails() {
     lastName: userData.lastName || '',
     street: userData.street || '',
     aptSuiteUnit: userData.aptSuiteUnit || '',
-    country: userData.country || '',
     city: userData.city || '',
-    state: userData.state || '',
+    state: userData.state || 'Select a country',
     postalCode: userData.postalCode || '',
     phone: userData.phone || '',
     email: userData.email || '',
@@ -149,11 +150,15 @@ export default function BillingDetails() {
               id="state"
               name="state"
             >
+              <option value="Select a country">Select a country</option>
               <option value="Ukraine">Ukraine</option>
               <option value="Poland">Poland</option>
               <option value="Germany">Germany</option>
               <option value="GB">Great Britain</option>
             </FieldStyle>
+            <ErrorMessageStyle>
+              <ErrorMessage name="state" />
+            </ErrorMessageStyle>
           </FieldWrapper>
           <FieldWrapper>
             <FieldLabel>City*</FieldLabel>
