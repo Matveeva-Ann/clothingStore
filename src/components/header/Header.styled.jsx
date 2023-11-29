@@ -26,7 +26,7 @@ export const LogoStyle = styled.span `
   font-family: 'Pacifico';
 `
 export const LogoLink = styled(Link) `
-  color: ${props => props.theme.colors.blackText};
+  color: var(--blackText);
   cursor: pointer;
   text-decoration: none;
 `
@@ -41,7 +41,7 @@ export const LogoText = styled.span `
 export const CategoriesList = styled.ul `
   display: flex;
   gap: ${props => props.theme.spacing(5)};
-  color: ${props => props.theme.colors.grayText};
+  color: var(--grayText);
   list-style: none;
   @media (width < 1100px ){
     display: none;
@@ -50,7 +50,7 @@ export const CategoriesList = styled.ul `
 export const CategoriesListBurger = styled.button `
   display: none;
   border-radius: 4px;
-  border-color: ${props => props.theme.colors.grayText};
+  border-color: var(--grayText);
   padding: 8px 5px 0 5px;
   outline: none;
   cursor: pointer;
@@ -64,13 +64,13 @@ export const CategoriesLink = styled(NavLink) `
   cursor: pointer;
   user-select: none;
   text-decoration: none;
-  color: ${props => props.theme.colors.grayText};
+  color: var(--grayText);
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${props => props.theme.fontSize.medium};
   padding: 0 10px;
   font-weight: 500;
   &.active{
-    color: ${props =>props.theme.colors.blackText};
+    color: var(--blackText);
     font-weight:  700;
   }
 `
@@ -84,7 +84,7 @@ export const InputSearch = styled.input `
   max-width: 270px;
   border: none;
   border-radius: 8px;
-  background-color: ${props => props.theme.colors.backgroundAccent};
+  background-color: var(--backgroundAccent);
   padding: ${props => props.theme.spacing(2.5)};
   font-size: 16px;
   outline: none;
@@ -104,8 +104,8 @@ export const CounterGoods = styled.span `
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: ${props => props.theme.colors.baseColor};
-  color: ${props => props.theme.colors.white};
+  background-color: var(--base-color);
+  color: var(--white);
   text-align: center;
   line-height: 20px;
   font-family: Arial, Helvetica, sans-serif;

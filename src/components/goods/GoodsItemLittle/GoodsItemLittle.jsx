@@ -5,8 +5,10 @@ import { BsFillBasket3Fill } from "react-icons/bs";
 import { IconsWrapper } from "../GoodItem/GoodItem.styled";
 import PropTypes from 'prop-types';
 import IconButton from "containers/IconButton/IconButton";
+import { useSelector } from "react-redux";
 
 export default function GoodItemLittle({ good, deleteFavorite, isBasket, deleteGood, addGoodToBasket, modalAddToBasket=false }) {
+  const scheme = useSelector(state => state.baseColor);
 
   return (
     <LittleGoodCard>
@@ -14,7 +16,7 @@ export default function GoodItemLittle({ good, deleteFavorite, isBasket, deleteG
         <LittleGoodImg src={good.imagePath.find(img=> img.color === good.color).url} alt={good.name} />
       </LittleGoodLink>
       <LittleTextWrapper>
-        <LittleGoodName>{good.name}</LittleGoodName>
+        <LittleGoodName scheme={scheme}>{good.name}</LittleGoodName>
         {/* додаємо опис товару, якщо є на сервері */}
         {good.description &&
           <LittleGoodsList>
@@ -26,7 +28,7 @@ export default function GoodItemLittle({ good, deleteFavorite, isBasket, deleteG
         }
 
         <LittleInfoBlock>
-          <LittleGoodPrice>${good.price}</LittleGoodPrice>
+          <LittleGoodPrice scheme={scheme}>${good.price}</LittleGoodPrice>
           {/*іконки залежно від того де використовується компонент, якщо модалка перед додаванням в корзину не відображаються взагалі*/}
           {!modalAddToBasket &&
             <IconsWrapper>

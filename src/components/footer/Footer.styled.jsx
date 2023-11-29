@@ -4,7 +4,7 @@ export const FooterWrapper = styled.div `
   width: 100%;
   display: flex;
   padding: 60px 110px;
-  background-color: ${props => props.theme.colors.accentText};
+  background-color: var(--accentText);
 `
 export const FooterLinks = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const FooterLinks = styled.div`
 `
 
 export const ListWrapper = styled.div`
-  color: ${props => props.theme.colors.backgroundAccent};
+  color: var(--backgroundAccent);
   font-family: Arial, Helvetica, sans-serif;
   flex-grow: 1;
   flex-basis: 0;
@@ -28,7 +28,7 @@ export const ListTitle = styled.h3`
 export const List = styled.ul `
   list-style: none;
   padding: 0;
-  color: ${props => props.theme.colors.backgroundAccent};
+  color: var(--backgroundAccent);
 `
 
 export const ListItem = styled.li `

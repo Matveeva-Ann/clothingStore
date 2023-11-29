@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { iconSize } from 'constants';
+import { AiFillHeart } from 'react-icons/ai';
 import { BsFillBasket3Fill } from 'react-icons/bs';
 
 export const GoodWrapper = styled.div`
@@ -13,12 +15,15 @@ export const GoodWrapper = styled.div`
 export const GoodImg = styled.img`
   border-radius: 8px;
 `
-
+export const AiFillHeartStyle = styled(AiFillHeart)`
+  color: var(--base-color);
+  font-size: ${iconSize.sm}px;
+`
 export const GoodInformation = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `
 export const GoodCategory = styled.span`
-  color: ${props => props.theme.colors.grayText};
+  color: var(--grayText);
 `
 export const GoodDescriptionItem = styled.li`
   list-style: none;
@@ -72,13 +77,13 @@ export const SelectedColor = styled.div`
 `
 
 export const PropertyName = styled.p`
-  color: ${props => props.theme.colors.black};
+  color: var(--black);
   font-weight: 700;
   margin: 20px 0;
   min-width: 280px;
 `
 export const AccentText = styled.span`
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
   font-weight: 400;
 `
 
@@ -95,8 +100,8 @@ export const AddBasketBtn = styled.button`
    cursor: pointer;
    display: block;
    padding: 10px 15px;
-   background-color: ${props => props.theme.colors.blackText};
-   color: ${props => props.theme.colors.white};
+   background-color: var(--blackText);
+   color: var(--white);
    font-size: 1.5vw;
    &:active{
      transform: scale(1.02);

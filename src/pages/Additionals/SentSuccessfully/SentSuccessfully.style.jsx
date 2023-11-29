@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 export const Title = styled.h2`
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  color: var(--black);
   text-align: center;
   max-width: 80%;
 `
 export const Text = styled.p`
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  color: var(--black);
   text-align: center;
   max-width: 70%;
 `
@@ -21,16 +21,17 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  padding-bottom: 100px;
 `
 
 export const Counter = styled.p`
   font-size: 50px;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  color: var(--black);
 `
 
 export const LinkStyle = styled(Link)`
-   color: black;
+   color: var(--black);
    cursor: pointer;
    font-size: 35px;
 `

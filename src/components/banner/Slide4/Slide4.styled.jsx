@@ -40,7 +40,7 @@ export const LinkButtonWrapper = styled.div`
 `
 export const PromotionTitle = styled.h2`
   font-size: ${props => props.theme.fontSize.megaLarge};
-  color: white;
+  color: var(--white);
   line-height: 93px;
   letter-spacing: -5px;
   text-align: center;

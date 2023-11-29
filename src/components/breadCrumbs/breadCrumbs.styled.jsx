@@ -53,5 +53,5 @@ export const BreadCrumbsLink = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  color: inherit;
+  color: var(--black);
 `

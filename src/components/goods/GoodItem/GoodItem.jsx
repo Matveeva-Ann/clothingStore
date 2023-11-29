@@ -1,9 +1,9 @@
 import ModalAddToBasket from "components/modals/ModalAddToBasket";
 import { iconSize } from "constants";
 import { useEffect, useState } from "react";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import { BsFillBasket3Fill } from "react-icons/bs";
-import { FaCheckStyle, FaCheckStyleWrapper, GoodImg, GoodLink, GoodName, GoodPrice, IconsCheckWrapper, IconsWrapper, InfoBlock } from "./GoodItem.styled";
+import { AiFillHeartStyle, FaCheckStyle, FaCheckStyleWrapper, GoodImg, GoodLink, GoodName, GoodPrice, IconsCheckWrapper, IconsWrapper, InfoBlock } from "./GoodItem.styled";
 import PropTypes from 'prop-types';
 import IconButton from "containers/IconButton/IconButton";
 import defaultImg from '../img/1_480x480.png';
@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 export default function GoodItem({ good, onClickFavorite }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isGoodInBasket, setIsGoodInBasket] = useState(false);
+  const scheme = useSelector(state => state.baseColor);
 
   const goodsInBasket = useSelector(state => state.basket)
 
@@ -26,14 +27,14 @@ export default function GoodItem({ good, onClickFavorite }) {
     <div>
       <GoodLink to={`/goods/${good.sku}`}>
         <GoodImg src={good.imagePath[0]?.url ?? defaultImg} alt={good.name} width={'270px'} height={'370px'}/>
-        <GoodName title={good.name}>{good.name}</GoodName>
+        <GoodName scheme={scheme} title={good.name}>{good.name}</GoodName>
       </GoodLink>
       <InfoBlock>
-        <GoodPrice>${good.price}</GoodPrice>
+        <GoodPrice scheme={scheme}>${good.price}</GoodPrice>
         <IconsWrapper>
           <IconButton  onClick={onClickFavorite} background='white' ariaLabel={'add to favorite'}>
             {good.favorite
-              ? <AiFillHeart size={iconSize.sm} style={{ color: '#8A33FD' }} ></AiFillHeart>
+              ? <AiFillHeartStyle scheme={scheme}></AiFillHeartStyle>
               : <AiOutlineHeart size={iconSize.sm} style={{ color: '#807D7E' }} ></AiOutlineHeart>
             }
           </IconButton>

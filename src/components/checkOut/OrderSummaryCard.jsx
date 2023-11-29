@@ -1,16 +1,18 @@
+import { useSelector } from "react-redux";
 import {
   OrderSummaryAccent,
   OrderSummaryCardImg,
   OrderSummaryCardInfo,
-  OrderSummaryCardName,
   OrderSummaryCardText,
   OrderSummaryCardWrapper,
   OrderSummaryLink,
 } from "./CheckOut.styled";
 
 export default function OrderSummaryCard({ good }) {
+  const scheme = useSelector(state => state.baseColor);
+
   return (
-    <OrderSummaryLink to={`/goods/${good.sku}`}>
+    <OrderSummaryLink scheme={scheme} to={`/goods/${good.sku}`}>
       <OrderSummaryCardWrapper>
         <OrderSummaryCardImg
           src={good.imagePath.find((elem) => elem.color === good.color).url}
@@ -18,10 +20,9 @@ export default function OrderSummaryCard({ good }) {
         />
         <OrderSummaryCardInfo>
           <div>
-            <OrderSummaryCardName>{good.name} <OrderSummaryAccent>&#215; {good.amount}</OrderSummaryAccent> </OrderSummaryCardName>
-            <OrderSummaryCardText>Color: <OrderSummaryAccent>{good.color}</OrderSummaryAccent></OrderSummaryCardText>
+            <OrderSummaryCardText>Color: <OrderSummaryAccent scheme={scheme}>{good.color}</OrderSummaryAccent></OrderSummaryCardText>
           </div>
-          <OrderSummaryAccent>${good.price}</OrderSummaryAccent>
+          <OrderSummaryAccent scheme={scheme}>${good.price}</OrderSummaryAccent>
         </OrderSummaryCardInfo>
       </OrderSummaryCardWrapper>
     </OrderSummaryLink>

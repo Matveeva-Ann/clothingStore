@@ -8,15 +8,18 @@ import { useDispatch } from 'react-redux';
 export default function ModalWrapper ({children, closeModal}){
   const dispatch = useDispatch();
   const modalRoot = document.querySelector('#modal-root');
-  
+
   function close(){
-    closeModal();
+    if(closeModal){
+      closeModal()
+      return;
+    }
     dispatch(modalAddToBasket())
   }
 
   return (
     createPortal(
-      <ModalBg data-modal="true" onClick={(event) => event.target === event.currentTarget && (closeModal() || dispatch(modalAddToBasket())) }>
+      <ModalBg data-modal="true" onClick={(event) => event.target === event.currentTarget && (closeModal ? closeModal() : dispatch(modalAddToBasket())) }>
       <ModalContainer>
         <ModalClose onClick={close}></ModalClose>
         {children}

@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { FaCheck } from "react-icons/fa";
+import { AiFillHeart } from 'react-icons/ai';
+import { iconSize } from 'constants';
 
 export const GoodLink = styled(Link) `
   cursor: pointer;
@@ -11,13 +13,17 @@ export const GoodImg = styled.img`
   border-radius: 10px;
   object-fit: cover;
 `
+export const AiFillHeartStyle = styled(AiFillHeart)`
+  color: var(--base-color);
+  font-size: ${iconSize.sm}px;
+`
 
 export const GoodName = styled.h3`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${props => props.theme.fontSize.normal};
   font-weight: 600;
   line-height: 28px;
-  color: ${props => props.theme.colors.blackText};
+  color: var(--blackText);
   margin-top: 15px;
   overflow: hidden;
   white-space: nowrap;
@@ -34,7 +40,7 @@ export const GoodPrice = styled.span `
   font-weight: 700;
   line-height: 17px;
   letter-spacing: 0em;
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
   font-family: Arial, Helvetica, sans-serif;
 `
 

@@ -1,12 +1,14 @@
 import { AccentText, GoodsColorsItem, GoodsColorsList, InputRadio, PropertyName } from "./GoodInfo.styled";
 import PropTypes from 'prop-types';
+import { useSelector } from "react-redux";
 
 export default function GoodColors({ color, good, clickOnCalor }) {
+  const scheme = useSelector(state => state.baseColor);
 
   return (
     <>
-      <PropertyName>
-        <AccentText>Колір:</AccentText> {color}
+      <PropertyName scheme={scheme}>
+        <AccentText scheme={scheme}>Колір:</AccentText> {color}
       </PropertyName>
       <div>
         Варіанти кольорів:

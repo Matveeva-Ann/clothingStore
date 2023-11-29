@@ -14,6 +14,6 @@ export const ErrPageText = styled.p`
   font-size: 25px;
   font-weight: 400;
   text-align: center;
-  color: ${props => props.theme.colors.grayText};
+  color: var(--grayText);
   letter-spacing: 0.7px;
 `

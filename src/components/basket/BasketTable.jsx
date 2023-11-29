@@ -1,15 +1,15 @@
 import IconButton from "containers/IconButton/IconButton";
 import BasketCard from "./BasketCard";
-import { RiDeleteBinLine } from "react-icons/ri";
-import { CardLink, Table, Tbody, TBodyTd, TBodyTr, THeader, THeaderTh, } from "./Basket.styled";
-import { iconSize } from "constants";
+import { CardLink, RiDeleteBinLineStyle, Table, Tbody, TBodyTd, TBodyTr, THeader, THeaderTh, } from "./Basket.styled";
 import PropTypes from 'prop-types';
 import ModalRemoveFromBasket from "components/modals/ModalRemoveFromBasket";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function BasketTable({ basketGoods, deleteFromBasket }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [goodItem, setGoodItem] = useState(0);
+  const scheme = useSelector(state => state.baseColor);
 
   function onClickDelete (good){
     setModalIsOpen(true);
@@ -18,7 +18,7 @@ export default function BasketTable({ basketGoods, deleteFromBasket }) {
 
   return (
     <Table>
-      <THeader>
+      <THeader scheme={scheme}>
         <tr>
           <THeaderTh>Product Details</THeaderTh>
           <THeaderTh>Price</THeaderTh>
@@ -31,18 +31,18 @@ export default function BasketTable({ basketGoods, deleteFromBasket }) {
       <Tbody>
         {basketGoods.map((good) => (
           <TBodyTr key={good.sku + good.color}>
-            <TBodyTd>
+            <TBodyTd  scheme={scheme}>
               <CardLink to={`/goods/${good.sku}`}>
                 <BasketCard good={good}></BasketCard>
               </CardLink>
             </TBodyTd>
-            <TBodyTd>${good.price}</TBodyTd>
-            <TBodyTd>{good.amount}</TBodyTd>
-            <TBodyTd style={{ color: '#BEBCBD', textTransform: 'uppercase' }}>{good.shipping || 'FREE'}</TBodyTd>
-            <TBodyTd>${parseFloat((good.price * good.amount).toFixed(2))}</TBodyTd>
-            <TBodyTd>
+            <TBodyTd  scheme={scheme}>${good.price}</TBodyTd>
+            <TBodyTd  scheme={scheme}>{good.amount}</TBodyTd>
+            <TBodyTd  scheme={scheme} style={{ color: '#BEBCBD', textTransform: 'uppercase' }}>{good.shipping || 'FREE'}</TBodyTd>
+            <TBodyTd  scheme={scheme}>${parseFloat((good.price * good.amount).toFixed(2))}</TBodyTd>
+            <TBodyTd  scheme={scheme}>
               <IconButton background='white' onClick={() => onClickDelete(good)} ariaLabel='delete good from basket' style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }}>
-                <RiDeleteBinLine size={iconSize.sm} style={{ color: '#8A33FD' }}></RiDeleteBinLine>
+                <RiDeleteBinLineStyle scheme={scheme}></RiDeleteBinLineStyle>
               </IconButton>
             </TBodyTd>
           

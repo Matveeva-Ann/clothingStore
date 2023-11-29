@@ -1,10 +1,13 @@
 import { ModalTitle } from '../Modals.styled';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 export default function ModalHeader({ title, children }) {
+  const scheme = useSelector(state => state.baseColor);
+
   return (
     <>
-      <ModalTitle>{title}</ModalTitle>
+      <ModalTitle scheme={scheme}>{title}</ModalTitle>
       {children}
     </>
   )

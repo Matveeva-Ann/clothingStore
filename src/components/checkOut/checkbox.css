@@ -1,5 +1,5 @@
 .checkbox:checked + .labelCheckbox::before{
-  background-color: #8A33FD;
+  background-color: #2A2F2F;
 }
 .checkbox:checked + .labelCheckbox::after{
  display: inline-block;

@@ -37,7 +37,7 @@ export const SlideContent = styled.div `
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  color: ${props => props.theme.colors.white};
+  color: var(--white);
   max-width: 450px;
   font-family: Arial, Helvetica, sans-serif;
   z-index: 1;

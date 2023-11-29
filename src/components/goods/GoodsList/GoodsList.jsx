@@ -10,7 +10,8 @@ import { favoriteGoods } from "redux/favoriteSlice";
 
 export default function GoodsList({ category }) {
   const [goodsCollection, setGoodsCollection] = useState([]);
-  const { data, error, isLoading } = useGetAllGoodsQuery();
+  const { data, error, isFetching } = useGetAllGoodsQuery();
+  const scheme = useSelector(state => state.baseColor);
    
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorite);
@@ -56,15 +57,15 @@ export default function GoodsList({ category }) {
     return [...goodsCollectionArray];
   }
 
-  if (isLoading) {
+  if (isFetching) {
     return <Loading></Loading>;
   } else if (data) {
     return (
       <GoodsCollectionWrapper>
         {category === "All" ? (
-          <GoodsCollectionTitle>Wardrobe for Everyone</GoodsCollectionTitle>
+          <GoodsCollectionTitle scheme={scheme}>Wardrobe for Everyone</GoodsCollectionTitle>
         ) : (
-          <GoodsCollectionTitle>For {category}</GoodsCollectionTitle>
+          <GoodsCollectionTitle scheme={scheme}>For {category}</GoodsCollectionTitle>
         )}
         <GoodsListStyle>
           {goodsCollection.map((elem, index) => (

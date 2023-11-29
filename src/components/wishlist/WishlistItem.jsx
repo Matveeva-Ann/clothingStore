@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 export default function WishlistItem({ good, deleteFavorite, addGoodToBasket }) {
   const [isGoodInBasket, setIsGoodInBasket] = useState(false);
+  const scheme = useSelector(state => state.baseColor);
 
   const goodsInBasket = useSelector(state => state.basket)
 
@@ -25,19 +26,19 @@ export default function WishlistItem({ good, deleteFavorite, addGoodToBasket }) 
       <CardLink to={`/goods/${good.sku}`}>
         <WishItemImg src={good.imagePath.find(img=> img.color === good.color).url} alt={good.name} />
         <DescriptionList>
-          <DescriptionListItem>{good.name}</DescriptionListItem>
-          <DescriptionListItem>Color: <DescriptionListItemData>{good.colors[0].name}</DescriptionListItemData></DescriptionListItem>
-          <DescriptionListItem>Description: <DescriptionListItemData>{good.description?.join(", ")}</DescriptionListItemData></DescriptionListItem>
+          <DescriptionListItem scheme={scheme}>{good.name}</DescriptionListItem>
+          <DescriptionListItem scheme={scheme}>Color: <DescriptionListItemData scheme={scheme}>{good.colors[0].name}</DescriptionListItemData></DescriptionListItem>
+          <DescriptionListItem scheme={scheme}>Description: <DescriptionListItemData scheme={scheme}>{good.description?.join(", ")}</DescriptionListItemData></DescriptionListItem>
         </DescriptionList>
       </CardLink>
-      <WishItemPrice>${good.price}</WishItemPrice>
+      <WishItemPrice scheme={scheme}>${good.price}</WishItemPrice>
       {isGoodInBasket
-         ? <WishItemBtn onClick={addGoodToBasket}>
+         ? <WishItemBtn scheme={scheme} onClick={addGoodToBasket}>
              <FaCheckStyleWrapper><FaCheckStyle></FaCheckStyle></FaCheckStyleWrapper>
              <PiShoppingCartSimple style={{ marginRight: '10px' }} ></PiShoppingCartSimple>
                 Added!
            </WishItemBtn>
-         : <WishItemBtn onClick={addGoodToBasket}>
+         : <WishItemBtn scheme={scheme} onClick={addGoodToBasket}>
              <PiShoppingCartSimple style={{ marginRight: '10px' }} ></PiShoppingCartSimple>
                Add to cart
            </WishItemBtn>

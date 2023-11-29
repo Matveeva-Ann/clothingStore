@@ -13,7 +13,7 @@ export const GoodsCollectionTitle = styled.h3 `
   line-height: 34px;
   letter-spacing: 0.02em;
   text-align: left;
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
   position: relative;
   margin-left: 50px;
   margin-bottom: 70px;
@@ -22,7 +22,7 @@ export const GoodsCollectionTitle = styled.h3 `
     display: block;
     width: 6px;
     height: 30px;
-    background-color: ${props => props.theme.colors.baseColor};
+    background-color: var(--base-color);
     border-radius: 10px;
     position: absolute;
     left: -20px;

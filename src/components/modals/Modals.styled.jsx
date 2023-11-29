@@ -50,7 +50,7 @@ export const ProductImg = styled.img`
 export const ModalTitle = styled.h2 `
    font-size: 32px;
    font-weight: 500;
-   color: ${props => props.theme.colors.black};
+   color: var(--black);
    text-align: center;
    font-family: Arial, Helvetica, sans-serif;
    margin: 0 0 ${props => props.theme.spacing(5)};
@@ -75,8 +75,8 @@ export const ModalTextContent = styled.div `
 
 export const ModalBtn = styled.button`
    cursor: pointer;
-   background-color: ${(props) => (props.btnColor === 'baseColor' ? props.theme.colors.baseColor : props.theme.colors.white)};
-   color: ${(props) => (props.btnColor === 'baseColor' ?  props.theme.colors.white : props.theme.colors.baseColor)};
+   background-color: ${(props) => (props.btnColor === 'baseColor' ? 'var(--base-color)' : 'var(--white)')};
+   color: ${(props) => (props.btnColor === 'baseColor' ?  'var(--white)' : 'var(--base-color)')};
    border: ${(props) => (props.btnColor === 'baseColor' ? 'none' : `1px solid ${props.theme.colors.baseColor}`)};
    font-size: 16px;
    padding: 10px 40px;

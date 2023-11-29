@@ -48,6 +48,7 @@ export default function BillingDetails() {
   const userData = useSelector(store => store.userData);
   const basketData = useSelector(store => store.basket);
   const navigate = useNavigate();
+  const scheme = useSelector(state => state.baseColor);
 
   const initialValues = {
     firstName: userData.firstName || '',
@@ -93,20 +94,23 @@ export default function BillingDetails() {
       });
   }
 
-  const PhoneInput = ({ field, ...props }) => (
-    <PatternFormat
-      {...field}
-      {...props}
-
-      format="+38 (0##) ### ## ##"
-      mask="_"
-      allowEmptyFormatting
-    />
-  );
+  const PhoneInput = ({ field, ...props }) => {
+    return (    
+      <PatternFormat
+        {...field}
+        {...props}
+  
+        format="+38 (0##) ### ## ##"
+        mask="_"
+        allowEmptyFormatting
+      />
+    );
+  }
+   
 
   return (
     <div>
-      <SubTitle>Billing Details</SubTitle>
+      <SubTitle scheme={scheme}>Billing Details</SubTitle>
       <Formik
         initialValues={initialValues}
         onSubmit={handelSubmit}
@@ -114,41 +118,42 @@ export default function BillingDetails() {
       >
         <FormStyle action="">
           <FieldWrapper>
-            <FieldLabel htmlFor="firstName">First Name*</FieldLabel>
-            <FieldStyle type="text" name="firstName" placeholder='First Name' />
+            <FieldLabel scheme={scheme} htmlFor="firstName">First Name*</FieldLabel>
+            <FieldStyle scheme={scheme} type="text" name="firstName" placeholder='First Name' />
             <ErrorMessageStyle>
               <ErrorMessage name="firstName" />
             </ErrorMessageStyle>
           </FieldWrapper>
           <FieldWrapper>
-            <FieldLabel>Last Name*</FieldLabel>
-            <FieldStyle type="text" name="lastName" placeholder='Last Name' />
+            <FieldLabel scheme={scheme}>Last Name*</FieldLabel>
+            <FieldStyle scheme={scheme} type="text" name="lastName" placeholder='Last Name' />
             <ErrorMessageStyle>
               <ErrorMessage name="lastName" />
             </ErrorMessageStyle>
           </FieldWrapper>
           <FieldWrapper>
-            <FieldLabel>Phone*</FieldLabel>
-            <FieldStyle type="text" name="phone" component={PhoneInput} />
+            <FieldLabel scheme={scheme}>Phone*</FieldLabel>
+            <FieldStyle scheme={scheme} type="text" name="phone" component={PhoneInput} />
             <ErrorMessageStyle>
               <ErrorMessage name="phone" />
             </ErrorMessageStyle>
           </FieldWrapper>
 
           <FieldWrapper>
-            <FieldLabel>Email*</FieldLabel>
-            <FieldStyle type="email" name="email" placeholder='Email' />
+            <FieldLabel scheme={scheme}>Email*</FieldLabel>
+            <FieldStyle scheme={scheme} type="email" name="email" placeholder='Email' />
             <ErrorMessageStyle>
               <ErrorMessage name="email" />
             </ErrorMessageStyle>
           </FieldWrapper>
 
           <FieldWrapper>
-            <FieldLabel>State*</FieldLabel>
+            <FieldLabel scheme={scheme}>State*</FieldLabel>
             <FieldStyle
               component="select"
               id="state"
               name="state"
+              scheme={scheme}
             >
               <option value="Select a country">Select a country</option>
               <option value="Ukraine">Ukraine</option>
@@ -161,29 +166,29 @@ export default function BillingDetails() {
             </ErrorMessageStyle>
           </FieldWrapper>
           <FieldWrapper>
-            <FieldLabel>City*</FieldLabel>
-            <FieldStyle type="text" name="city" placeholder='City' />
+            <FieldLabel scheme={scheme}>City*</FieldLabel>
+            <FieldStyle scheme={scheme} type="text" name="city" placeholder='City' />
             <ErrorMessageStyle>
               <ErrorMessage name="city" />
             </ErrorMessageStyle>
           </FieldWrapper>
           <FieldWrapper>
-            <FieldLabel>Street Address*</FieldLabel>
-            <FieldStyle type="text" name="street" placeholder='Street Address' />
+            <FieldLabel scheme={scheme}>Street Address*</FieldLabel>
+            <FieldStyle scheme={scheme} type="text" name="street" placeholder='Street Address' />
             <ErrorMessageStyle>
               <ErrorMessage name="street" />
             </ErrorMessageStyle>
           </FieldWrapper>
           <FieldWrapper>
-            <FieldLabel>Apt, suite, unit</FieldLabel>
-            <FieldStyle type="text" name="aptSuiteUnit" placeholder='apartment, suite, unit, etc. (optional)' />
+            <FieldLabel scheme={scheme}>Apt, suite, unit</FieldLabel>
+            <FieldStyle scheme={scheme} type="text" name="aptSuiteUnit" placeholder='apartment, suite, unit, etc. (optional)' />
             <ErrorMessageStyle>
               <ErrorMessage name="aptSuiteUnit" />
             </ErrorMessageStyle>
           </FieldWrapper>
 
           <div>
-            <ButtonSubmit padding='16px 20px' fontSize='18px' radius='8px' bColor='#8A33FD' colorText='#fff'>Continue to delivery</ButtonSubmit>
+            <ButtonSubmit padding='16px 20px' fontSize='18px' radius='8px' bColor='baseColor' colorText='#fff'>Continue to delivery</ButtonSubmit>
             <div style={{ marginTop: '20px' }}>
               <FieldCheckbox className='checkbox' id='checkbox' type="checkbox" name="saveInformation" />
               <LabelCheckbox htmlFor='checkbox' className="labelCheckbox">Save my information for a faster checkout</LabelCheckbox>

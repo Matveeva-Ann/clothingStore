@@ -8,13 +8,14 @@ import { useSelector } from 'react-redux';
 
 export default function Favorite() {
   const favoriteCount = useSelector(state => state.favorite).length;
+  const scheme = useSelector(state => state.baseColor);
 
   return (
     <NavLink to={`/wishlist`}>
       {({ isActive }) => (
         <IconButton ariaLabel={'favorite'} style={{ position: 'relative' }} background={isActive ? 'grayText' : 'backgroundAccent'}>
           {favoriteCount > 0 &&
-            <CounterGoods>{favoriteCount}</CounterGoods>}
+            <CounterGoods scheme={scheme}>{favoriteCount}</CounterGoods>}
           <AiOutlineHeart size={iconSize.sm} ></AiOutlineHeart>
         </IconButton>
       )}

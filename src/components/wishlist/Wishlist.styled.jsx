@@ -34,18 +34,18 @@ export const DescriptionListItem = styled.li`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${props => props.theme.fontSize.normal};
   font-weight: 700;
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
   margin-bottom: ${props => props.theme.spacing(2)};
 `
 export const DescriptionListItemData = styled.span`
   font-size: ${props => props.theme.fontSize.normal};
   font-weight: 500;
-  color: ${props => props.theme.colors.grayText};
+  color: var(--grayText);
 `
 export const WishItemPrice = styled.span`
   font-size: ${props => props.theme.fontSize.medium};
   font-weight: 700;
-  color: ${props => props.theme.colors.grayText};
+  color:var(--grayText);
   flex-grow: 0.1;
   flex-basis: 0;
 `
@@ -53,8 +53,8 @@ export const WishItemBtn = styled.button`
   position: relative;
   cursor: pointer;
   padding: 8px 12px;
-  background-color: ${props => props.theme.colors.baseColor};
-  color: ${props => props.theme.colors.white};
+  background-color: var(--base-color);
+  color: var(--white);
   border-radius: 8px;
   border: none;
   outline: none;
@@ -69,11 +69,11 @@ export const CardLink = styled(Link)`
   max-width: 500px;
   gap: 20px;
   text-decoration: none;
-  color: inherit;
+  color: var(--black);
 `
 
 export const Title = styled.h2`
-  color: ${props => props.theme.colors.accentText};
+  color:var(--accentText);
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${props => props.theme.fontSize.subTitleLittle};
   font-style: normal;

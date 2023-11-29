@@ -6,7 +6,7 @@ export const Button = styled.button`
   padding: ${props => props.padding};
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${props => props.fontSize};
-  background-color: ${props => props.bColor};
+  background-color: var(--${props => props.bColor});
   border: none;
   outline: none;
   color: ${props => props.colorText};

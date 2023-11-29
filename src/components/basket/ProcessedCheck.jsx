@@ -4,7 +4,7 @@ import { CheckTable, CheckTableWrapper, CheckTdName, CheckTdNameTotal, CheckTdVa
 
 
 export default function ProcessedCheck() {
-
+  const scheme = useSelector(state => state.baseColor);
   const basket = useSelector(store => store.basket);
   const totalPriseCount = basket.reduce((accum, elem) => accum + Number(elem.price)* Number(elem.amount), 0);
   const totalPrise = Number(totalPriseCount.toFixed(2));
@@ -18,25 +18,25 @@ export default function ProcessedCheck() {
         <CheckTable>
           <tbody>
             <tr>
-              <CheckTdName>Sub Total</CheckTdName>
-              <CheckTdValue>${totalPrise}</CheckTdValue>
+              <CheckTdName scheme={scheme}>Sub Total</CheckTdName>
+              <CheckTdValue scheme={scheme}>${totalPrise}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdName>Total Items</CheckTdName>
-              <CheckTdValue>{totalItems}</CheckTdValue>
+              <CheckTdName scheme={scheme}>Total Items</CheckTdName>
+              <CheckTdValue scheme={scheme}>{totalItems}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdName>Shipping</CheckTdName>
-              <CheckTdValue>${shipping}</CheckTdValue>
+              <CheckTdName scheme={scheme}>Shipping</CheckTdName>
+              <CheckTdValue scheme={scheme}>${shipping}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdNameTotal>Grand Total</CheckTdNameTotal>
-              <CheckTdValueTotal>${totalPriseWithShipping}</CheckTdValueTotal>
+              <CheckTdNameTotal scheme={scheme}>Grand Total</CheckTdNameTotal>
+              <CheckTdValueTotal scheme={scheme}>${totalPriseWithShipping}</CheckTdValueTotal>
             </tr>
           </tbody>
         </CheckTable>
       </CheckTableWrapper>
-      <LinkButton link = '/CheckOutPage' color='#8A33FD' colorText='#fff'>Proceed To Checkout</LinkButton>
+      <LinkButton link = '/CheckOutPage' color='base-color' colorText='#fff'>Proceed To Checkout</LinkButton>
     </CheckWrapper>
   )
 }

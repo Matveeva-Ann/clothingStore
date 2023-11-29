@@ -6,7 +6,7 @@ import svg from './svg/check.svg';
 export const Title = styled.h2`
   font-size: 28px;
   font-family: Arial, Helvetica, sans-serif;
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
   margin-bottom: 20px;
   margin-top: 50px;
   &::before{
@@ -14,7 +14,7 @@ export const Title = styled.h2`
     display: inline-block;
     width: 6px;
     height: 28px;
-    background-color: ${props => props.theme.colors.baseColor};
+    background-color: var(--base-color);
     border-radius: 10px;
     margin-right: 15px;
     position: relative;
@@ -33,7 +33,7 @@ export const CheckOutWrapper = styled.div`
 export const SubTitle = styled.h3`
   margin-bottom: 50px;
   font-size: ${props => props.theme.fontSize.customText};
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
 `
 
 export const FormStyle = styled(Form)`
@@ -50,7 +50,7 @@ export const FieldStyle = styled(Field)`
   margin-right: 38px;
   border: none;
   outline: none;
-  background-color: ${props => props.theme.colors.backgroundField};
+  background-color: var(--backgroundField);
   border-radius: 8px;
   padding: 12px 20px;
   box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.2);
@@ -58,7 +58,7 @@ export const FieldStyle = styled(Field)`
   &::placeholder{
     font-size: ${props => props.theme.fontSize.small};
     font-family: Arial, Helvetica, sans-serif;
-    color: ${props => props.theme.colors.grayText};
+    color: var(--grayText);
     letter-spacing: 1.5px;
   }
 `
@@ -78,7 +78,7 @@ export const FieldWrapper= styled.div`
 export const FieldLabel= styled.label`
   font-family: Arial, Helvetica, sans-serif;
   font-size: ${props => props.theme.fontSize.normal};
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
   font-weight: 600;
 `
 
@@ -140,7 +140,7 @@ export const OrderSummaryCardWrapper = styled.div`
 `
 export const OrderSummaryLink = styled(Link)`
   text-decoration: none;
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
 `
 
 export const OrderSummaryCardImg= styled.img`
@@ -168,7 +168,7 @@ export const OrderSummaryCardText = styled.h4`
   font-size: ${props => props.theme.fontSize.small};
 `
 export const OrderSummaryAccent = styled.span`
-  color: ${props => props.theme.colors.grayText};
+  color: var(--grayText);
   font-weight: 500;
 `
 
@@ -179,7 +179,7 @@ export const CountBasketWrapper = styled.div`
 `
 export const CountBasketItem = styled.span`
   font-weight: 700;
-  color: ${props => props.theme.colors.accentText};
+  color: var(--accentText);
   font-size: ${props => props.theme.fontSize.normal};
   margin-bottom: 15px;
 `
@@ -190,7 +190,7 @@ export const CountBasketLine= styled.div`
   margin-bottom: 20px;
 `
 export const CountBasketAccent= styled.span`
-  color: ${props => props.theme.colors.grayText};
+  color: var(--grayText);
 `
 export const ErrorMessageStyle = styled.div`
   position: absolute;

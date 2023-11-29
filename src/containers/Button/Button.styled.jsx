@@ -7,8 +7,8 @@ export const ButtonStyle = styled.button`
   border-radius: 8px;
   font-size: ${props => props.theme.fontSize.customText};
   font-weight: 700;
-  background-color: ${props => props.theme.colors.white};
-  color: ${props => props.theme.colors.accentText};
+  background-color: var(--white);
+  color:var(--accentText);
   border: none;
   outline: none;
 

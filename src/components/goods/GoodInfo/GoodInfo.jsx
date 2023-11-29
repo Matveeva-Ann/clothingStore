@@ -2,9 +2,9 @@ import ModalAddToBasket from "components/modals/ModalAddToBasket";
 import { iconSize } from "constants";
 import IconButton from "containers/IconButton/IconButton";
 import { useEffect, useState } from "react";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import { IconsWrapper } from "../GoodItem/GoodItem.styled";
-import { AccentText, AddBasketBtn, BsFillBasket3FillSVG, GoodCategory, GoodDescriptionItem, GoodInformation, GoodsDescriptionList, GoodWrapper, PropertyName, } from "./GoodInfo.styled";
+import { AccentText, AddBasketBtn, AiFillHeartStyle, BsFillBasket3FillSVG, GoodCategory, GoodDescriptionItem, GoodInformation, GoodsDescriptionList, GoodWrapper, PropertyName, } from "./GoodInfo.styled";
 import PropTypes from "prop-types";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +20,7 @@ export default function GoodInfo({ cardData }) {
   const [good, setGood] = useState(cardData);
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorite);
+  const scheme = useSelector(state => state.baseColor);
 
   const modalIsOpen = useSelector(state => state.modalAddToBasket)
 
@@ -54,7 +55,7 @@ export default function GoodInfo({ cardData }) {
       <GoodWrapper>
         <GoodImage good={good} color={color} clickOnCalor={clickOnCalor} setColor={setColor} ></GoodImage>
         <GoodInformation>
-          <GoodCategory>For {good.category}</GoodCategory>
+          <GoodCategory scheme={scheme}>For {good.category}</GoodCategory>
           <h2>{good.name}</h2>
           <GoodsDescriptionList>
             {good.description?.map((elem, index) => {
@@ -68,8 +69,8 @@ export default function GoodInfo({ cardData }) {
             <GoodColors color={color} good={good} clickOnCalor={clickOnCalor}></GoodColors>
           )}
 
-          <PropertyName>
-            <AccentText>Ціна:</AccentText> ${good.price}
+          <PropertyName scheme={scheme}>
+            <AccentText scheme={scheme}>Ціна:</AccentText> ${good.price}
           </PropertyName>
 
           <IconsWrapper>
@@ -79,13 +80,13 @@ export default function GoodInfo({ cardData }) {
               ariaLabel={"add to favorite"}
             >
               {isFavorite ? (
-                <AiFillHeart size={iconSize.sm} style={{ color: "#8A33FD" }}></AiFillHeart>
+                <AiFillHeartStyle scheme={scheme}></AiFillHeartStyle>
               ) : (
                 <AiOutlineHeart size={iconSize.sm} tyle={{ color: "#807D7E" }}></AiOutlineHeart>
               )}
             </IconButton>
 
-            <AddBasketBtn onClick={() =>  dispatch(modalAddToBasket())}>
+            <AddBasketBtn scheme={scheme} onClick={() =>  dispatch(modalAddToBasket())}>
               <BsFillBasket3FillSVG></BsFillBasket3FillSVG> Додати в кошик
             </AddBasketBtn>
           </IconsWrapper>
