@@ -11,7 +11,6 @@ import { useSelector } from "react-redux";
 export default function GoodItem({ good, onClickFavorite }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isGoodInBasket, setIsGoodInBasket] = useState(false);
-  const scheme = useSelector(state => state.baseColor);
 
   const goodsInBasket = useSelector(state => state.basket)
 
@@ -27,14 +26,14 @@ export default function GoodItem({ good, onClickFavorite }) {
     <div>
       <GoodLink to={`/goods/${good.sku}`}>
         <GoodImg src={good.imagePath[0]?.url ?? defaultImg} alt={good.name} width={'270px'} height={'370px'}/>
-        <GoodName scheme={scheme} title={good.name}>{good.name}</GoodName>
+        <GoodName title={good.name}>{good.name}</GoodName>
       </GoodLink>
       <InfoBlock>
-        <GoodPrice scheme={scheme}>${good.price}</GoodPrice>
+        <GoodPrice>${good.price}</GoodPrice>
         <IconsWrapper>
           <IconButton  onClick={onClickFavorite} background='white' ariaLabel={'add to favorite'}>
             {good.favorite
-              ? <AiFillHeartStyle scheme={scheme}></AiFillHeartStyle>
+              ? <AiFillHeartStyle></AiFillHeartStyle>
               : <AiOutlineHeart size={iconSize.sm} style={{ color: '#807D7E' }} ></AiOutlineHeart>
             }
           </IconButton>

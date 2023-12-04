@@ -9,6 +9,7 @@ import GoodPage from 'pages/GoodPage.jsx';
 import LoginPage from 'pages/LoginPage';
 import CheckOutPage from 'pages/CheckOutPage';
 import SentSuccessfully from 'pages/Additionals/SentSuccessfully/SentSuccessfully';
+import BreadCrumbs from 'components/breadCrumbs/breadCrumbs';
 
 export default function AppRoutes (){
   
@@ -18,10 +19,22 @@ export default function AppRoutes (){
         <Route index element={<Home></Home>} />
         <Route path='goods' element={<GoodsList category={'Women'}></GoodsList>} />
         <Route path='/goods/:goodId' element={<GoodPage></GoodPage>} />
-        <Route path='Shop' element={<GoodsList category={'All'}></GoodsList>} />
-        <Route path='Men' element={<GoodsList category={'Men'}></GoodsList>} />
-        <Route path='Women' element={<GoodsList category={'Women'}></GoodsList>} />
-        <Route path='Children' element={<GoodsList category={'Children'}></GoodsList>} />
+        <Route path='Shop' element={<>
+          <BreadCrumbs linksArr={[{ link: '', name: 'Home'}]} name='Wardrobe for Everyone'></BreadCrumbs>
+          <GoodsList category={'All'}></GoodsList>
+        </>} />
+        <Route path='Men' element={<>
+          <BreadCrumbs linksArr={[{ link: '', name: 'Home'}, { link: `Shop`, name: `Wardrobe for Everyone`,}]} name='Men'></BreadCrumbs>
+          <GoodsList category={'Men'}></GoodsList> 
+        </>}/>
+        <Route path='Women' element={<>
+          <BreadCrumbs linksArr={[{ link: '', name: 'Home'}, { link: `Shop`, name: `Wardrobe for Everyone`,}]} name='Women'></BreadCrumbs>
+          <GoodsList category={'Women'}></GoodsList>
+        </>} />
+        <Route path='Children' element={<>
+          <BreadCrumbs linksArr={[{ link: '', name: 'Home'}, { link: `Shop`, name: `Wardrobe for Everyone`,}]} name='Children'></BreadCrumbs>
+          <GoodsList category={'Children'}></GoodsList>
+        </>} />
         <Route path='CheckOutPage' element={<CheckOutPage></CheckOutPage>} />
         <Route path='wishlist' element={<Wishlist></Wishlist>} />
         <Route path='basket' element={<Basket></Basket>} />

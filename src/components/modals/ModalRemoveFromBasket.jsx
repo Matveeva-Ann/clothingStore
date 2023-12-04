@@ -1,7 +1,5 @@
 import Button from "./modalElements/Button";
-import ModalFooter from "./modalElements/ModalFooter";
-import ModalHeader from "./modalElements/ModalHeader";
-import ModalWrapper from "./modalElements/ModalWrapper";
+import { ModalFooter, ModalHeader, ModalWrapper} from './modalElements';
 
 export default function ModalRemoveFromBasket({onClickDelete, setModalIsOpen}){
   function deleteGood(){

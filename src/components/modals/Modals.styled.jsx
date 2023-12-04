@@ -77,7 +77,7 @@ export const ModalBtn = styled.button`
    cursor: pointer;
    background-color: ${(props) => (props.btnColor === 'baseColor' ? 'var(--base-color)' : 'var(--white)')};
    color: ${(props) => (props.btnColor === 'baseColor' ?  'var(--white)' : 'var(--base-color)')};
-   border: ${(props) => (props.btnColor === 'baseColor' ? 'none' : `1px solid ${props.theme.colors.baseColor}`)};
+   border: ${(props) => (props.btnColor === 'baseColor' ? 'none' : `1px solid var(--base-color)`)};
    font-size: 16px;
    padding: 10px 40px;
    border-radius: 8px;

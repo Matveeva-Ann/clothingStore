@@ -3,7 +3,7 @@ import defaultImg from '../img/1_480x480.png';
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import PropTypes from 'prop-types';
 
-export default function GoodImage({color, good, clickOnCalor, setColor}) {
+export default function GoodImage({color, good, clickOnCalor, setColor, height}) {
 
   function findImg(imagePathArr) {
     const foundImage = imagePathArr.find(elem => elem.color === color);
@@ -34,7 +34,7 @@ export default function GoodImage({color, good, clickOnCalor, setColor}) {
       <GoodImg
         src={findImg(good.imagePath)}
         alt={good.name}
-        height="530px"
+        height={height}
       />
       <SwipeBtnLeft onClick={() => changeImg(good, 'increment')} disabled={!good.colors || !good.imagePath}><SlArrowLeft size={20}></SlArrowLeft> </SwipeBtnLeft>
       <SwipeBtnRight onClick={() => changeImg(good, 'decrement')} disabled={!good.colors || !good.imagePath}><SlArrowRight size={20}></SlArrowRight> </SwipeBtnRight>

@@ -4,7 +4,6 @@ import { CheckTable, CheckTableWrapper, CheckTdName, CheckTdNameTotal, CheckTdVa
 
 
 export default function ProcessedCheck() {
-  const scheme = useSelector(state => state.baseColor);
   const basket = useSelector(store => store.basket);
   const totalPriseCount = basket.reduce((accum, elem) => accum + Number(elem.price)* Number(elem.amount), 0);
   const totalPrise = Number(totalPriseCount.toFixed(2));
@@ -18,20 +17,20 @@ export default function ProcessedCheck() {
         <CheckTable>
           <tbody>
             <tr>
-              <CheckTdName scheme={scheme}>Sub Total</CheckTdName>
-              <CheckTdValue scheme={scheme}>${totalPrise}</CheckTdValue>
+              <CheckTdName>Sub Total</CheckTdName>
+              <CheckTdValue>${totalPrise}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdName scheme={scheme}>Total Items</CheckTdName>
-              <CheckTdValue scheme={scheme}>{totalItems}</CheckTdValue>
+              <CheckTdName>Total Items</CheckTdName>
+              <CheckTdValue>{totalItems}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdName scheme={scheme}>Shipping</CheckTdName>
-              <CheckTdValue scheme={scheme}>${shipping}</CheckTdValue>
+              <CheckTdName>Shipping</CheckTdName>
+              <CheckTdValue>${shipping}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdNameTotal scheme={scheme}>Grand Total</CheckTdNameTotal>
-              <CheckTdValueTotal scheme={scheme}>${totalPriseWithShipping}</CheckTdValueTotal>
+              <CheckTdNameTotal>Grand Total</CheckTdNameTotal>
+              <CheckTdValueTotal>${totalPriseWithShipping}</CheckTdValueTotal>
             </tr>
           </tbody>
         </CheckTable>

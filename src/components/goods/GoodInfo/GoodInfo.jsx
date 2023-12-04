@@ -20,7 +20,6 @@ export default function GoodInfo({ cardData }) {
   const [good, setGood] = useState(cardData);
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorite);
-  const scheme = useSelector(state => state.baseColor);
 
   const modalIsOpen = useSelector(state => state.modalAddToBasket)
 
@@ -53,9 +52,9 @@ export default function GoodInfo({ cardData }) {
   return (
     <>
       <GoodWrapper>
-        <GoodImage good={good} color={color} clickOnCalor={clickOnCalor} setColor={setColor} ></GoodImage>
+        <GoodImage good={good} height='530px' color={color} clickOnCalor={clickOnCalor} setColor={setColor} ></GoodImage>
         <GoodInformation>
-          <GoodCategory scheme={scheme}>For {good.category}</GoodCategory>
+          <GoodCategory>For {good.category}</GoodCategory>
           <h2>{good.name}</h2>
           <GoodsDescriptionList>
             {good.description?.map((elem, index) => {
@@ -69,8 +68,8 @@ export default function GoodInfo({ cardData }) {
             <GoodColors color={color} good={good} clickOnCalor={clickOnCalor}></GoodColors>
           )}
 
-          <PropertyName scheme={scheme}>
-            <AccentText scheme={scheme}>Ціна:</AccentText> ${good.price}
+          <PropertyName>
+            <AccentText>Ціна:</AccentText> ${good.price}
           </PropertyName>
 
           <IconsWrapper>
@@ -80,13 +79,13 @@ export default function GoodInfo({ cardData }) {
               ariaLabel={"add to favorite"}
             >
               {isFavorite ? (
-                <AiFillHeartStyle scheme={scheme}></AiFillHeartStyle>
+                <AiFillHeartStyle></AiFillHeartStyle>
               ) : (
                 <AiOutlineHeart size={iconSize.sm} tyle={{ color: "#807D7E" }}></AiOutlineHeart>
               )}
             </IconButton>
 
-            <AddBasketBtn scheme={scheme} onClick={() =>  dispatch(modalAddToBasket())}>
+            <AddBasketBtn onClick={() =>  dispatch(modalAddToBasket())}>
               <BsFillBasket3FillSVG></BsFillBasket3FillSVG> Додати в кошик
             </AddBasketBtn>
           </IconsWrapper>

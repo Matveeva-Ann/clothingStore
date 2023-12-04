@@ -1,12 +1,8 @@
 import { Btn } from "./LinkButton.styled";
 import PropTypes from 'prop-types';
-import { useSelector } from "react-redux";
-
 export default function LinkButton ({children, link, size='normal', color='blackText', colorText}){
-  const scheme = useSelector(state => state.baseColor);
-  
   return(
-    <Btn to={link} scheme={scheme} size={size} color={color} colortext={colorText}>
+    <Btn to={link} size={size} color={color} colortext={colorText}>
       {children}
     </Btn>
   )

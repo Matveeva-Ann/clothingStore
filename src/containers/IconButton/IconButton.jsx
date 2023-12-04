@@ -1,12 +1,8 @@
 import { IconButtonStyle } from "./IconButton.styled";
 import PropTypes from 'prop-types';
-import { useSelector } from "react-redux";
-
 export default function IconButton ({ background, onClick, children, ariaLabel, ...allyProps}){
-  const scheme = useSelector(state => state.baseColor);
-
   return(
-    <IconButtonStyle scheme={scheme} background={background} type="button" aria-label={ariaLabel} {...allyProps} onClick={onClick}>
+    <IconButtonStyle background={background} type="button" aria-label={ariaLabel} {...allyProps} onClick={onClick}>
       {children}
     </IconButtonStyle>
   )

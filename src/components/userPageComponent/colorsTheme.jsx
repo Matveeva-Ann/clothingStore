@@ -10,8 +10,8 @@ export default function ColorsTheme () {
   }, [theme])
 
   return (
-    <>
-      <ChooseTitle>Вибрати схему:</ChooseTitle>
+  <div style={{minHeight: '400px'}}>
+      <ChooseTitle>Вибрати тему:</ChooseTitle>
       <ColorsList>
         <Item><ItemButton onClick={() => setTheme("BASE")}>BASE</ItemButton></Item>
         <Item><ItemButton onClick={() => setTheme("GREEN")}>GREEN/BLUE</ItemButton></Item>
@@ -20,6 +20,6 @@ export default function ColorsTheme () {
         <Item><ItemButton onClick={() => setTheme("PINK")}>PINK</ItemButton></Item>
         <Item><ItemButton onClick={() => setTheme("PURPLE")}>PURPLE</ItemButton></Item>
       </ColorsList>
-    </>
+    </div>
   );
 }

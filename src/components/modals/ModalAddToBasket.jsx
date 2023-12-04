@@ -1,9 +1,6 @@
 import GoodItemLittle from "components/goods/GoodsItemLittle/GoodsItemLittle";
 import Button from "./modalElements/Button";
-import ModalBody from "./modalElements/ModalBody";
-import ModalFooter from "./modalElements/ModalFooter";
-import ModalHeader from "./modalElements/ModalHeader";
-import ModalWrapper from "./modalElements/ModalWrapper";
+import {ModalBody, ModalFooter, ModalHeader, ModalWrapper} from './modalElements';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { basketGoods } from "redux/basketSlice";
@@ -37,7 +34,7 @@ export default function ModalAddToBasket({ good, selectedColor='black', onClick 
         <GoodItemLittle good={{...good, color: selectedColor}} modalAddToBasket={true}></GoodItemLittle>
       </ModalBody>
       <ModalFooter>
-        <Button onClick={addToBasket} btnColor='baseColor'>ADD TO BASKET</Button>
+        <Button onClick={addToBasket} btnColor='base-color'>ADD TO BASKET</Button>
       </ModalFooter>
     </ModalWrapper>
   )

@@ -30,16 +30,16 @@ export const GoodsCollectionTitle = styled.h3 `
 `
 export const GoodsListStyle = styled.ul `
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: ${props => props.value ? 'repeat(4, 1fr)' : 'repeat(1, 1fr)'}; 
   padding: 0;
   gap: 50px;
   
   @media (width < 1300px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: ${props => props.value ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)'};
   }
 
   @media (width <  950px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: ${props => props.value ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)'};
   }
 
   @media (width <  640px) {
@@ -48,8 +48,14 @@ export const GoodsListStyle = styled.ul `
 ` 
 
 export const GoodsItemStyle = styled.li `
+  display:block;
+  width: 100%;
+  background-color: beige;
   list-style: none;
-  max-width: 270px;
+  max-width:  ${props => props.value ? '270px' : '100%'};
+  padding: 10px;
+  border-radius: 8px;
   align-self: center;
   margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 `

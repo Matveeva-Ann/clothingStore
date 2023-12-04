@@ -7,14 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { favoriteGoods } from "redux/favoriteSlice";
 import { basketGoods } from "redux/basketSlice";
 import { toast } from 'react-toastify';
-import { useTheme } from "@emotion/react";
 
 export default function Wishlist() {
   const favoriteArr = useSelector(state => state.favorite)
   const dispatch = useDispatch();
   const basketArr = useSelector(state => state.basket);
-  const theme = useTheme();
-  const scheme = useSelector(state => state.baseColor);
   
   // видалити з обраного
   function deleteFavorite(sku) {
@@ -43,7 +40,7 @@ export default function Wishlist() {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      style: {backgroundColor: theme.colors[scheme].baseColor, fontSize: '20px', textAlign: 'center'}
+      style: {backgroundColor: 'gray', fontSize: '20px', textAlign: 'center'}
       });
   }
 

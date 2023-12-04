@@ -6,17 +6,14 @@ import Logo from "./Logo";
 import Search from "./Search";
 import { ButtonsWrapper, CategoriesListBurger, HeadersElemWrapper, HeaderStyle } from "./Header.styled";
 import PropTypes from 'prop-types';
-import { useSelector } from "react-redux";
-
 export default function Header() {
-  const scheme = useSelector(state => state.baseColor);
 
   return (
     <HeaderStyle>
       <HeadersElemWrapper>
         <Logo></Logo>
         <GoodsCategories></GoodsCategories>
-        <CategoriesListBurger scheme={scheme}>
+        <CategoriesListBurger>
           <CiMenuBurger size={28}></CiMenuBurger>
         </CategoriesListBurger>
         <Search></Search>

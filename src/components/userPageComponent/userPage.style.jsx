@@ -5,6 +5,7 @@ export const ColorsList = styled.ul`
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 `
 export const ChooseTitle = styled.h3`
   font-size: 30px;
@@ -13,22 +14,22 @@ export const ChooseTitle = styled.h3`
   margin: 30px 0;
 `
 export const Item = styled.li`
-  :nth-child(1){
+  :nth-of-type(1){
     background-color: #8A33FD;
   }
-  :nth-child(2){
+  :nth-of-type(2){
     background-color: #157145;
   }
-  :nth-child(3){
+  :nth-of-type(3){
     background-color: #fd2d00;
   }
-  :nth-child(4){
+  :nth-of-type(4){
     background-color: #FFD700;
   }
-  :nth-child(5){
+  :nth-of-type(5){
     background-color: #e91e63;
   }
-  :nth-child(6){
+  :nth-of-type(6){
     background-color: #9b59b6;
   }
 `

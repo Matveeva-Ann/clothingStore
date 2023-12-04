@@ -7,7 +7,6 @@ export default function LoginPage (){
     <>
        <GoodsCollectionTitle style={{ margin: '40px'}}>Login Page or User Page</GoodsCollectionTitle>
        <ColorsTheme></ColorsTheme>
-
     </>
   )
 }
