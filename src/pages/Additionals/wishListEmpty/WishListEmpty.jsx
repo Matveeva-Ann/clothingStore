@@ -9,7 +9,7 @@ export default function WishListEmpty (){
       <WishListEmptyImg src={img} alt="wish list empty" />
       <WishListEmptyTitle>У вас ще немає списків бажань</WishListEmptyTitle>
       <WishListEmptyText>Саме час створити перший</WishListEmptyText>
-      <LinkButton link={'/Shop'}>Перейти до списку товарів</LinkButton>
+      <LinkButton link={'/Shop'}>До списку товарів</LinkButton>
     </WishListEmptyWrapper>
   )
 }

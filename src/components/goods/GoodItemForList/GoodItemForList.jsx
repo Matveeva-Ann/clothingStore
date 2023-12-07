@@ -4,6 +4,7 @@ import IconButton from 'containers/IconButton/IconButton';
 import { useState } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { favoriteGoods } from 'redux/favoriteSlice';
 import GoodColors from '../GoodInfo/GoodColors';
 import GoodImage from '../GoodInfo/GoodImage';
@@ -24,6 +25,8 @@ export default function GoodItemForList({ cardData }) {
   const [isFavorite, setIsFavorite] = useState(cardData.favorite);
   const favorites = useSelector(state => state.favorite);
   const dispatch = useDispatch();
+  const isUserLogin = useSelector(store => store.login);
+  const navigate = useNavigate();
 
   // вибір кольору
   function clickOnCalor(elem = {}) {
@@ -36,6 +39,10 @@ export default function GoodItemForList({ cardData }) {
   }
   // перемикач на додавання\видалення з вибраного
   function toggleFavorite(goodSku) {
+    if(!isUserLogin){
+      navigate('/loginPage', {state: `/`})
+      return goodSku;
+    }
     const isFavorite = favorites.some((favorite) => favorite.sku === goodSku);
     setIsFavorite(!isFavorite);
     const filteredLSFavorite = isFavorite

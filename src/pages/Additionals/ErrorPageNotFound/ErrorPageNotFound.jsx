@@ -14,8 +14,8 @@ export default function ErrorPageNotFound() {
    
           <ErrorTextActionTitle>Що робимо?</ErrorTextActionTitle>
           <ErrorTextAction>
-            <LinkButton link={'/'}>Повернутись на головну</LinkButton>
-            <LinkButton link={'/'}>Повернутись на головну</LinkButton>
+            <LinkButton link={'/'}>На головну</LinkButton>
+            <LinkButton link={'/'}>На головну</LinkButton>
           </ErrorTextAction>
       
       </ErrorText>

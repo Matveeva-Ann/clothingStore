@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
-import { ChooseTitle, ColorsList, Item, ItemButton } from "./userPage.style";
-
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "redux/isLoginSlice";
+import { ButtonLogOut, ChooseTitle, ColorsList, Item, ItemButton } from "./userPage.style";
 
 export default function ColorsTheme () {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'BASE');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(()=>{
    document.documentElement.setAttribute('data-theme', theme);
    localStorage.setItem('theme', theme)
   }, [theme])
 
+  function logout (){
+    dispatch(logOut());
+    navigate('/', { replace: true })
+  }
+
   return (
   <div style={{minHeight: '400px'}}>
+      <ButtonLogOut onClick={logout}>Вийти</ButtonLogOut>
+
       <ChooseTitle>Вибрати тему:</ChooseTitle>
       <ColorsList>
         <Item><ItemButton onClick={() => setTheme("BASE")}>BASE</ItemButton></Item>

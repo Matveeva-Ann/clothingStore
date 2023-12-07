@@ -255,3 +255,18 @@ export const CheckTdValueTotal = styled.td`
   margin-top: 40px;
   padding-top: 40px;
 `
+export const ButtonCheckout = styled.button`
+   cursor: pointer;
+   padding: 13px 18px;
+   max-width: 350px;
+   background-color: var(--base-color);
+   color: var(--white);
+   font-size: 1.5vw;
+   text-transform:uppercase;
+   text-align: center;
+   border: none;
+   border-radius: 8px;
+   &:active{
+     transform: scale(1.02);
+   }
+`

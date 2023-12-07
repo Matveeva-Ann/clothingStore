@@ -6,6 +6,7 @@ export const ColorsList = styled.ul`
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 `
 export const ChooseTitle = styled.h3`
   font-size: 30px;
@@ -45,4 +46,20 @@ export const ItemButton = styled.button`
   &:active{
     transform: scale(1.1);
   }
+`
+export const ButtonLogOut = styled.button`
+    cursor: pointer;
+   padding: 10px 40px;
+   max-width: 350px;
+   background-color: var(--black);
+   color: var(--white);
+   font-size: 1.5vw;
+   text-transform:uppercase;
+   text-align: center;
+   border: none;
+   border-radius: 8px;
+   margin-left: 100px;
+   &:active{
+     transform: scale(1.02);
+   }
 `

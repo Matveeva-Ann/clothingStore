@@ -7,6 +7,7 @@ import { basketReducer } from './basketSlice';
 import { goodsReducer } from './goodsSlice';
 import { modalAddToBasketReducer } from './modalAddToBasketSlice';
 import { userDataReducer } from './userData';
+import { loginReducer } from './isLoginSlice';
 
 const persistConfig = {
   key: 'root',
@@ -19,6 +20,7 @@ export const rootReducer = combineReducers({
   basket: basketReducer,
   goods: goodsReducer,
   userData: userDataReducer,
+  login: loginReducer,
   modalAddToBasket: modalAddToBasketReducer,
   [goodsApi.reducerPath]: goodsApi.reducer,
 });

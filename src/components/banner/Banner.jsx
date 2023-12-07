@@ -19,7 +19,7 @@ export default function Banner() {
       pagination={{dynamicBullets: true}}
       scrollbar={{ draggable: true }}
       loop={true}
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay: 8000 }}
       speed={1500} 
     >
       <SwiperSlide>

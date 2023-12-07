@@ -12,6 +12,7 @@ import GoodImage from "./GoodImage";
 import GoodColors from "./GoodColors";
 import { favoriteGoods } from "redux/favoriteSlice";
 import { modalAddToBasket } from "redux/modalAddToBasketSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function GoodInfo({ cardData }) {
   // const [isOpenModal, setIsOpenModal] = useState(false);
@@ -20,13 +21,17 @@ export default function GoodInfo({ cardData }) {
   const [good, setGood] = useState(cardData);
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorite);
-
+  const isUserLogin = useSelector(store => store.login)
+  const navigate = useNavigate();
+  
   const modalIsOpen = useSelector(state => state.modalAddToBasket)
 
   // перевірка при першому рендері чи товар знаходиться у вибраному
   useEffect(()=>{
-    const isFavorite = favorites.some((favorite) => favorite.sku === good.sku);
-    setIsFavorite( isFavorite );
+    if(isUserLogin){
+      const isFavorite = favorites.some((favorite) => favorite.sku === good.sku);
+      setIsFavorite( isFavorite );
+    }
   }, [])
   
   // вибір кольору
@@ -41,12 +46,16 @@ export default function GoodInfo({ cardData }) {
 
   // перемикач на додавання\видалення з вибраного
   function toggleFavorite(goodSku) {
-    const isFavorite = favorites.some((favorite) => favorite.sku === goodSku);
-    setIsFavorite(!isFavorite);
-    const filteredLSFavorite = isFavorite
-      ? favorites.filter((elem) => elem.sku !== goodSku)
-      : [...favorites, { ...good, color: color }];
-    dispatch(favoriteGoods(filteredLSFavorite))
+    if(isUserLogin){
+      const isFavorite = favorites.some((favorite) => favorite.sku === goodSku);
+      setIsFavorite(!isFavorite);
+      const filteredLSFavorite = isFavorite
+        ? favorites.filter((elem) => elem.sku !== goodSku)
+        : [...favorites, { ...good, color: color }];
+      dispatch(favoriteGoods(filteredLSFavorite))
+    } else{
+      navigate('/loginPage', {state: `/goods/${cardData.sku}`})
+    }
   }
 
   return (

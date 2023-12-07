@@ -11,7 +11,7 @@ export default function DisplayModeToggle() {
 
   return (
     <div className="wrapper">
-      <h5 className='title'>"Таблиця" / "Список"</h5>
+      <h5 className='title'>Змінити відображення товарів</h5>
       <div className="toggle-button-cover">
         <div className="button r" id="button-1">
           <input type="checkbox" className="checkbox" onClick={toggle} defaultChecked={!value} />

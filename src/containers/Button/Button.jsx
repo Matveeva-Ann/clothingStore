@@ -1,8 +1,8 @@
 import { ButtonStyle } from './Button.styled';
 import PropTypes from 'prop-types';
 
-export default function Button({ children }) {
-  return <ButtonStyle >{children}</ButtonStyle>;
+export default function Button({ children, onClick }) {
+  return <ButtonStyle onClick={onClick}>{children}</ButtonStyle>;
 }
 
 Button.propTypes = {

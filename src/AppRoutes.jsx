@@ -10,6 +10,9 @@ import LoginPage from 'pages/LoginPage';
 import CheckOutPage from 'pages/CheckOutPage';
 import SentSuccessfully from 'pages/Additionals/SentSuccessfully/SentSuccessfully';
 import BreadCrumbs from 'components/breadCrumbs/breadCrumbs';
+import UserPage from 'pages/UserPage';
+import RequireAuth from 'hoc/RequireAuth';
+
 
 export default function AppRoutes (){
   
@@ -40,6 +43,11 @@ export default function AppRoutes (){
         <Route path='basket' element={<Basket></Basket>} />
         <Route path='loginPage' element={<LoginPage></LoginPage>} />
         <Route path='sentSuccessfully' element={<SentSuccessfully></SentSuccessfully>} />
+        <Route path='userPage' element={
+            <RequireAuth>
+              <UserPage></UserPage>
+            </RequireAuth>       
+        }></Route>
         <Route path='*' element={<ErrorPageNotFound/>}/>
       </Route>
     </Routes>

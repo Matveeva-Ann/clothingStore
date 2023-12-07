@@ -4,7 +4,6 @@ import { CheckOutPageStyle, CheckOutWrapper } from "components/checkOut/CheckOut
 import CheckOutTitle from "components/checkOut/CheckOutTitle";
 import OrderSummary from "components/checkOut/OrderSummary";
 
-
 export default function CheckOutPage() {
   const linksArr =[
     {

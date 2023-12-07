@@ -24,7 +24,7 @@ export default function SentSuccessfully() {
     <Wrapper>
       <Img src={img} alt="cat" />
       <Title>Ваше замовлення успішно сформоване!</Title>
-      <Text>Деталі замовлення можна подивитись в <LinkStyle to={'/loginPage'}>особистому кабінеті</LinkStyle></Text>
+      <Text>Деталі замовлення можна подивитись в <LinkStyle to={'/userPage'}>особистому кабінеті</LinkStyle></Text>
       <Text style={{fontSize: '25px'}}>Перехід на сторінку товарів через:</Text>
       <Counter> 00:0{seconds}</Counter>
     </Wrapper>

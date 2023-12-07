@@ -7,41 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { userDataState } from "redux/userData";
 import { urlSendOrder } from "constants/urlGoodsCollection";
 import { useNavigate } from 'react-router-dom';
-import * as Yup from "yup";
 import { basketGoods } from "redux/basketSlice";
-
-
-const SchemaDataOrder = Yup.object().shape({
-  firstName: Yup.string()
-    .min(2, '*Надто коротке ім’я')
-    .max(30, '*Максимальна кількість символів 30')
-    .required('*Це поле обов’язкове для заповнення'),
-  lastName: Yup.string()
-    .min(2, '*Надто коротке прізвище')
-    .max(30, '*Максимальна кількість символів 30')
-    .required('*Це поле обов’язкове для заповнення'),
-  phone: Yup.string()
-    .matches(/^\+38 \(\d{3}\) \d{3} \d{2} \d{2}$/, '*Введіть коректний номер телефону')
-    .required('*Це поле обов’язкове для заповнення'),
-  email: Yup.string()
-    .matches(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/, '*Введіть коректну електронну пошту')
-    .required('*Це поле обов’язкове для заповнення'),
-  city: Yup.string()
-    .min(2, '*Введіть повнк назву міста')
-    .max(30, '*Максимальна кількість символів 30')  
-    .required('*Це поле обов’язкове для заповнення'),
-  state: Yup.string()  
-    .oneOf(['Ukraine', 'Poland', 'Germany', 'GB'], '*Виберіть одну з доступних країн'),
-  street: Yup.string()
-    .min(2, '*Назва вулиці має бути мінімум 2 символи')
-    .max(30, '*Максимальна кількість символів 30')  
-    .required('*Це поле обов’язкове для заповнення'),
-  aptSuiteUnit: Yup.string()
-  .min(2, '*Введіть повні дані')
-  .max(30, '*Максимальна кількість символів 30')  
-  .required('*Це поле обов’язкове для заповнення'),
-});
-
+import SchemaDataOrder from "./validationSchema";
 
 export default function BillingDetails() {
   const dispatch = useDispatch();

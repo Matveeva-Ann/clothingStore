@@ -14,6 +14,7 @@ import { useGetAllGoodsQuery } from 'redux/api';
 import { favoriteGoods } from 'redux/favoriteSlice';
 import AppContext from 'context/context';
 import GoodItemForList from '../GoodItemForList/GoodItemForList';
+import { useNavigate } from 'react-router-dom';
 
 export default function GoodsList({ category }) {
   const [goodsCollection, setGoodsCollection] = useState([]);
@@ -22,7 +23,9 @@ export default function GoodsList({ category }) {
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorite);
   const { value } = useContext(AppContext);
- 
+  const isLogin = useSelector(store => store.login);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const filterGoodsByCategory = goods =>
       category !== 'All'
@@ -35,25 +38,33 @@ export default function GoodsList({ category }) {
 
   // змінюємо масив товарів залежно від обраних користувачем товарів
   function updateGoodsWithFavorites(dataArr) {
-    const favoriteSkus = favorites.map(elem => elem.sku) || [];
-    const updatedDataArr = dataArr.map(elem => ({
-      ...elem,
-      favorite: favoriteSkus.includes(elem.sku),
-    }));
-    return updatedDataArr;
+    if(isLogin){
+      const favoriteSkus = favorites.map(elem => elem.sku) || [];
+      const updatedDataArr = dataArr.map(elem => ({
+        ...elem,
+        favorite: favoriteSkus.includes(elem.sku),
+      }));
+      return updatedDataArr;
+    }
+    return dataArr;
   }
 
   //додати/видалит вибрані
   function addToFavorite(index, good) {
-    const updatedFavorites = toggleFavorite([...favorites], good);
-    const newGoodsCollection = updateGoodsCollection(
-      [...goodsCollection],
-      index
-    );
-
-    setGoodsCollection(newGoodsCollection);
-    dispatch(favoriteGoods(updatedFavorites));
+    if(isLogin){
+      const updatedFavorites = toggleFavorite([...favorites], good);
+      const newGoodsCollection = updateGoodsCollection(
+        [...goodsCollection],
+        index
+      );
+  
+      setGoodsCollection(newGoodsCollection);
+      dispatch(favoriteGoods(updatedFavorites));
+    }else{
+      navigate('/loginPage', {state: '/'})
+    }
   }
+
   function toggleFavorite(favoritesArray, good) {
     const indexInFavorite = favoritesArray.findIndex(
       elem => elem.sku === good.sku
@@ -76,28 +87,29 @@ export default function GoodsList({ category }) {
     return <Loading></Loading>;
   } else if (data) {
     return (
+      <>
         <GoodsCollectionWrapper>
           {category === 'All' ? (
-            <GoodsCollectionTitle>
-              Wardrobe for Everyone
-            </GoodsCollectionTitle>
+            <GoodsCollectionTitle>Wardrobe for Everyone</GoodsCollectionTitle>
           ) : (
-            <GoodsCollectionTitle>
-              For {category}
-            </GoodsCollectionTitle>
+            <GoodsCollectionTitle>For {category}</GoodsCollectionTitle>
           )}
           <GoodsListStyle value={value}>
             {goodsCollection.map((elem, index) => (
               <GoodsItemStyle key={elem.sku} value={value}>
-                {value
-                 ? <GoodItem good={elem} onClickFavorite={() => addToFavorite(index, elem)}></GoodItem>
-                 : <GoodItemForList cardData={elem}></GoodItemForList>
-                }
-          
+                {value ? (
+                  <GoodItem
+                    good={elem}
+                    onClickFavorite={() => addToFavorite(index, elem)}
+                  ></GoodItem>
+                ) : (
+                  <GoodItemForList cardData={elem}></GoodItemForList>
+                )}
               </GoodsItemStyle>
             ))}
           </GoodsListStyle>
         </GoodsCollectionWrapper>
+      </>
     );
   } else if (error) {
     return <ErrorRequest></ErrorRequest>;

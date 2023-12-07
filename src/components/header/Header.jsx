@@ -6,7 +6,10 @@ import Logo from "./Logo";
 import Search from "./Search";
 import { ButtonsWrapper, CategoriesListBurger, HeadersElemWrapper, HeaderStyle } from "./Header.styled";
 import PropTypes from 'prop-types';
+import User from "./User";
+import { useSelector } from "react-redux";
 export default function Header() {
+  const isLogin = useSelector(store => store.login);
 
   return (
     <HeaderStyle>
@@ -18,7 +21,8 @@ export default function Header() {
         </CategoriesListBurger>
         <Search></Search>
         <ButtonsWrapper>
-          <Favorite></Favorite>
+          <User></User>
+           {isLogin && <Favorite></Favorite>}
           <Cart></Cart>
         </ButtonsWrapper>
       </HeadersElemWrapper>
