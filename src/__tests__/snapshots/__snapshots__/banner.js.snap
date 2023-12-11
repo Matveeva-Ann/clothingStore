@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner renders correctly 1`] = `
+<div
+  className="css-e0dlsq"
+  data-testid="slide1"
+>
+  <div
+    className="css-rtya7d"
+  >
+    <p
+      className="css-19d397d"
+    >
+      T-shirt / Tops
+    </p>
+    <h2
+      className="css-2fc4s7"
+    >
+      Summer Value Pack
+    </h2>
+    <p>
+      cool / colorful / comfy
+    </p>
+    <a
+      className="css-1j6zs67"
+      color="white"
+      colortext="black"
+      href="/Shop"
+      onClick={[Function]}
+      size="normal"
+    >
+      Shop Now
+    </a>
+  </div>
+</div>
+`;

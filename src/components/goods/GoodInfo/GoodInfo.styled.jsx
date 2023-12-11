@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { iconSize } from 'constants';
 import { AiFillHeart } from 'react-icons/ai';
 import { BsFillBasket3Fill } from 'react-icons/bs';
 
@@ -17,7 +16,7 @@ export const GoodImg = styled.img`
 `
 export const AiFillHeartStyle = styled(AiFillHeart)`
   color: var(--base-color);
-  font-size: ${iconSize.sm}px;
+  font-size: 20px;
 `
 export const GoodInformation = styled.div`
   font-family: Arial, Helvetica, sans-serif;

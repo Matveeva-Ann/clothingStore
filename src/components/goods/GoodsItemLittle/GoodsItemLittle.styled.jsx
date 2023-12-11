@@ -21,7 +21,7 @@ export const LittleGoodImg = styled.img`
 
 export const LittleGoodName = styled.h3`
   font-family: Arial, Helvetica, sans-serif;
-  font-size: ${props => props.theme.fontSize.small};
+  font-size: 14px;
   font-weight: 600;
   color: var(--blackText);
 `
@@ -32,7 +32,7 @@ export const LittleInfoBlock = styled.div`
 `
 
 export const LittleGoodPrice = styled.span`
-  font-size: ${props => props.theme.fontSize.small};
+  font-size: 14px;
   font-weight: 700;
   line-height: 17px;
   letter-spacing: 0em;

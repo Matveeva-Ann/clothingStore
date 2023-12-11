@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import { iconSize } from 'constants';
 import { Link } from 'react-router-dom';
 import { FaCheck } from "react-icons/fa";
 import { AiFillHeart } from 'react-icons/ai';
-import { iconSize } from 'constants';
 
 export const GoodLink = styled(Link) `
   cursor: pointer;
@@ -15,7 +15,7 @@ export const GoodImg = styled.img`
 `
 export const AiFillHeartStyle = styled(AiFillHeart)`
   color: var(--base-color);
-  font-size: ${iconSize.sm}px;
+  font-size: 20px;
 `
 
 export const GoodName = styled.h3`

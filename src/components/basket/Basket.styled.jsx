@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { iconSize } from 'constants';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
@@ -226,7 +225,7 @@ export const CheckTable = styled.table`
 `
 export const RiDeleteBinLineStyle = styled(RiDeleteBinLine)`
   color: var(--base-color);
-  font-size: ${iconSize.sm}px;
+  font-size: 20px;
 `
 
 export const CheckTdName = styled.td`

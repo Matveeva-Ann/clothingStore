@@ -1,38 +1,38 @@
-import Cart from "./Cart";
-import Favorite from "./Favorite";
-import GoodsCategories from "./GoodsCategories";
-import { CiMenuBurger } from "react-icons/ci";
-import Logo from "./Logo";
-import Search from "./Search";
-import { ButtonsWrapper, CategoriesListBurger, HeadersElemWrapper, HeaderStyle } from "./Header.styled";
+import React from 'react';
+import { CiMenuBurger } from 'react-icons/ci';
+import { HeaderStyle, HeadersElemWrapper, CategoriesListBurger, ButtonsWrapper } from './Header.styled';
 import PropTypes from 'prop-types';
-import User from "./User";
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
+import Logo from './Logo';
+import GoodsCategories from './GoodsCategories';
+import Search from './Search';
+import User from './User';
+import Favorite from './Favorite';
+import Cart from './Cart';
+
 export default function Header() {
-  const isLogin = useSelector(store => store.login);
+  const isLogin = useSelector((store) => store.login);
 
   return (
-    <HeaderStyle>
+    <HeaderStyle data-testid="header">
       <HeadersElemWrapper>
-        <Logo></Logo>
-        <GoodsCategories></GoodsCategories>
+        <Logo data-testid="logo" />
+        <GoodsCategories data-testid="goods-categories" />
         <CategoriesListBurger>
-          <CiMenuBurger size={28}></CiMenuBurger>
+          <CiMenuBurger size={28} />
         </CategoriesListBurger>
-        <Search></Search>
+        <Search data-testid="search" />
         <ButtonsWrapper>
-          <User></User>
-           {isLogin && <Favorite></Favorite>}
-          <Cart></Cart>
+          <User data-testid="user" />
+          {isLogin && <Favorite data-testid="favorite" />}
+          <Cart data-testid="cart" />
         </ButtonsWrapper>
       </HeadersElemWrapper>
     </HeaderStyle>
-  )
+  );
 }
-
 
 Header.propTypes = {
-
   setBasketCount: PropTypes.func,
   basketCount: PropTypes.number,
-}
+};

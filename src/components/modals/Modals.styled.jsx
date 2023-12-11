@@ -34,7 +34,7 @@ export const ModalContainer = styled.div`
    max-height: 90vh;
    width: 100%;
    min-height: 200px;
-   padding: ${props => props.theme.spacing(5)};
+   padding: 20px;
    background-color: #fff;
    border-radius: 16px;
    animation-name: ${modalAnimation};
@@ -53,7 +53,7 @@ export const ModalTitle = styled.h2 `
    color: var(--black);
    text-align: center;
    font-family: Arial, Helvetica, sans-serif;
-   margin: 0 0 ${props => props.theme.spacing(5)};
+   margin: 0 0 20px;
 ` 
 
 export const BtnWrapperFooter = styled.div`

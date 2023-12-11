@@ -43,15 +43,15 @@ export const SlideContent = styled.div `
   z-index: 1;
 `
 export const ClothingDescription = styled.p `
-  font-size: ${props => props.theme.fontSize.medium};
+  font-size: 22px;
 `
 
 export const PromotionTitle = styled.h2 `
-  font-size: ${props => props.theme.fontSize.megaLarge};
+  font-size: 94px;
   line-height: 93px;
   letter-spacing: -5px;
   @media (width < 800px) {
-    font-size: ${props => props.theme.fontSize.extraLarge};
+    font-size: 60px;
     letter-spacing: 0px;
     font-weight: 500;
     line-height: 50px;

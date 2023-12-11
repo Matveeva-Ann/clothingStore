@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export default function ModalClose ({onClick}){
   return (
-    <RxCross2 onClick={onClick} className='cross' size={iconSize.md}></RxCross2>
+    <RxCross2 onClick={onClick} className='cross' size='22px'></RxCross2>
   )
 }
 

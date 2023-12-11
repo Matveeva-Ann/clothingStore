@@ -10,7 +10,7 @@ export default function ModalAddToBasket({ good, selectedColor='black', onClick 
  
   const basket = useSelector(state => state.basket);
    function addToBasket() {
-    const isInBasket = basket.some(elem => elem.sku === good.sku && elem.color === selectedColor);
+    const isInBasket = basket?.some(elem => elem.sku === good.sku && elem.color === selectedColor);
 
     const newBasketArr = isInBasket
       ? basket.map((elem) =>

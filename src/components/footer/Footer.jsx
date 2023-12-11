@@ -1,3 +1,4 @@
+import React from 'react';
 import Company from "./Company";
 import { FooterLinks, FooterWrapper } from "./Footer.styled";
 import Location from "./Location";
@@ -8,7 +9,7 @@ import NeedHelp from "./NeedHelp";
 export default function Footer() {
 
   return (
-    <FooterWrapper>
+    <FooterWrapper data-testid="footer-wrapper">
       <FooterLinks>
         <NeedHelp></NeedHelp>
         <Company></Company>

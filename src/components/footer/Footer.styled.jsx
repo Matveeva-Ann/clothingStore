@@ -22,7 +22,7 @@ export const ListWrapper = styled.div`
   flex-basis: 0;
 `
 export const ListTitle = styled.h3`
-  font-size: ${props => props.theme.fontSize.subTitleLittle};
+  font-size: 28px;
   font-weight: 700;
 `
 export const List = styled.ul `
@@ -39,5 +39,5 @@ export const ListItemLink = styled.a `
   display: inline-block;
   color: inherit;
   padding: 8px 0;
-  font-size: ${props => props.theme.fontSize.normal};
+  font-size: 18px;
 `

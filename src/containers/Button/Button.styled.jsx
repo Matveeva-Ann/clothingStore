@@ -5,7 +5,7 @@ export const ButtonStyle = styled.button`
   max-width: 250px;
   padding: 16px 60px;
   border-radius: 8px;
-  font-size: ${props => props.theme.fontSize.customText};
+  font-size: 20px;
   font-weight: 700;
   background-color: var(--accentText);
   color: var(--white);

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Link, NavLink } from "react-router-dom";
 
 export const HeaderStyle = styled.header `
-   padding: ${props => props.theme.spacing(8)};
+   padding: 32px;
    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 `
 
@@ -22,7 +22,7 @@ export const LogoWrapper = styled.h1 `
   font-weight: 400;
 `
 export const LogoStyle = styled.span `
-  font-size: ${props => props.theme.fontSize.large};
+  font-size: 32px;
   font-family: 'Pacifico';
 `
 export const LogoLink = styled(Link) `
@@ -34,13 +34,13 @@ export const LogoText = styled.span `
   position: absolute;
   bottom: -12px;
   right: -14px;
-  font-size: ${props => props.theme.fontSize.small};
+  font-size: 14px;
   display: block;
 `
 
 export const CategoriesList = styled.ul `
   display: flex;
-  gap: ${props => props.theme.spacing(5)};
+  gap: 20px;
   color: var(--grayText);
   list-style: none;
   @media (width < 1100px ){
@@ -66,7 +66,7 @@ export const CategoriesLink = styled(NavLink) `
   text-decoration: none;
   color: var(--grayText);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: ${props => props.theme.fontSize.medium};
+  font-size: 22px;
   padding: 0 10px;
   font-weight: 500;
   &.active{
@@ -85,10 +85,10 @@ export const InputSearch = styled.input `
   border: none;
   border-radius: 8px;
   background-color: var(--backgroundAccent);
-  padding: ${props => props.theme.spacing(2.5)};
+  padding: 9px;
   font-size: 16px;
   outline: none;
-  padding-left: ${props => props.theme.spacing(8)};
+  padding-left: 32px;
   font-family: Arial, Helvetica, sans-serif;
 `
 
@@ -109,5 +109,5 @@ export const CounterGoods = styled.span `
   text-align: center;
   line-height: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: ${props => props.theme.fontSize.small};
+  font-size: 14px;
 `
