@@ -6,8 +6,7 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { favoriteGoods } from 'redux/favoriteSlice';
-import GoodColors from '../GoodInfo/GoodColors';
-import GoodImage from '../GoodInfo/GoodImage';
+import { GoodColors, GoodImage} from '../GoodInfo';
 import { AddBasketBtn, AiFillHeartStyle, BsFillBasket3FillSVG } from '../GoodInfo/GoodInfo.styled';
 import { IconsWrapper } from '../GoodItem/GoodItem.styled';
 import {

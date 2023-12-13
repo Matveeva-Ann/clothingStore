@@ -1,6 +1,5 @@
 import Banner from "components/banner/Banner";
-import DisplayModeToggle from "components/goods/DisplayModeToggle/DisplayModeToggle";
-import GoodsList from "components/goods/GoodsList/GoodsList";
+import {DisplayModeToggle, GoodsList} from "components/goods";
 
 export default function Home() {
 

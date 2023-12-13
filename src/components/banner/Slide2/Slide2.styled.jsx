@@ -21,5 +21,3 @@ export const SlideContent = styled.div `
   max-width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 `
-
-

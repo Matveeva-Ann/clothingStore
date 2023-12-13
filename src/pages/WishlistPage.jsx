@@ -1,7 +1,6 @@
-import WishlistTitle from "components/wishlist/WishlistTitle";
+import {WishlistTitle, WishlistItem} from "components/wishlist";
 import { WishlistList, WishlistPoint, } from "../components/wishlist/Wishlist.styled";
 import WishListEmpty from "./Additionals/wishListEmpty/WishListEmpty";
-import WishlistItem from "../components/wishlist/WishlistItem";
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 import { useDispatch, useSelector } from 'react-redux';
 import { favoriteGoods } from "redux/favoriteSlice";

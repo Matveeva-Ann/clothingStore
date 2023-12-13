@@ -1,10 +1,10 @@
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
-import GoodInfo from "components/goods/GoodInfo/GoodInfo";
+import {GoodInfo} from "components/goods/GoodInfo";
 import { urlGoods } from "constants/urlGoodsCollection";
 import sendRequest from "helpers/sendRequest";
 import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import ErrorRequest from "./Additionals/ErrorRequest/ErrorRequest";
 import Loading from "./Additionals/Loading/Loading";
 
@@ -20,7 +20,11 @@ export default function GoodPage() {
   const [linksArr, setLinksArr] = useState([]);
 
   const { goodId } = useParams();
-
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
   // імітація запиту на отримання даних по одному товару
   useEffect(() => {
      fetchData()

@@ -1,10 +1,8 @@
 import BasketEmpty from "pages/Additionals/BasketEmpty/BasketEmpty";
-import BasketInfoRegister from "components/basket/BasketInfoRegister";
-import BasketTable from "components/basket/BasketTable";
+import {BasketTable, BasketInfoRegister, Total} from "components/basket";
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
 import { useDispatch, useSelector } from 'react-redux';
 import { basketGoods } from "redux/basketSlice";
-import Total from "components/basket/Total";
 
 export default function Basket() {
   const dispatch = useDispatch();

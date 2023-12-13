@@ -1,4 +1,4 @@
-import GoodItemLittle from "components/goods/GoodsItemLittle/GoodsItemLittle";
+import {GoodItemLittle} from "components/goods";
 import Button from "./modalElements/Button";
 import {ModalBody, ModalFooter, ModalHeader, ModalWrapper} from './modalElements';
 import PropTypes from 'prop-types';

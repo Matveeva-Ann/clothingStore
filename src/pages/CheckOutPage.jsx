@@ -1,10 +1,15 @@
 import BreadCrumbs from "components/breadCrumbs/breadCrumbs";
-import BillingDetails from "components/checkOut/BillingDetails";
+import {BillingDetails, CheckOutTitle, OrderSummary} from "components/checkOut";
 import { CheckOutPageStyle, CheckOutWrapper } from "components/checkOut/CheckOut.styled";
-import CheckOutTitle from "components/checkOut/CheckOutTitle";
-import OrderSummary from "components/checkOut/OrderSummary";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function CheckOutPage() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const linksArr =[
     {
       link: '',

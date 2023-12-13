@@ -1,10 +1,6 @@
 import React from 'react';
-import Company from "./Company";
 import { FooterLinks, FooterWrapper } from "./Footer.styled";
-import Location from "./Location";
-import MoreInfo from "./MoreInfo";
-import NeedHelp from "./NeedHelp";
-
+import {Location, MoreInfo, NeedHelp, Company} from "../footer";
 
 export default function Footer() {
 

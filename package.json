@@ -51,12 +51,6 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "moduleNameMapper": {
-      "^.+\\.css$": "identity-obj-proxy",
-      "^.+\\.svg$": "jest-svg-transformer"
-    }
-  },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.23.5",

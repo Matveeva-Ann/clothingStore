@@ -4,7 +4,6 @@ import CountBasket from "./CountBasket";
 import OrderSummaryCard from "./OrderSummaryCard";
 
 
-
 export default function OrderSummary(){
   const basketGoods = useSelector(store => store.basket);
   const totalSum = Number(basketGoods.reduce((accum, elem) => accum + Number(elem.price)*Number(elem.amount), 0));
