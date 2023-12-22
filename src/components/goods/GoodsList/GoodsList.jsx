@@ -15,17 +15,23 @@ import { favoriteGoods } from 'redux/favoriteSlice';
 import AppContext from 'context/context';
 import GoodItemForList from '../GoodItemForList/GoodItemForList';
 import { useNavigate } from 'react-router-dom';
+import { urlGoods, urlGoodsEn } from 'constants/urlGoodsCollection';
+import { useTranslation } from 'react-i18next';
 
 export default function GoodsList({ category }) {
   const [goodsCollection, setGoodsCollection] = useState([]);
-  const { data, error, isFetching } = useGetAllGoodsQuery();
-
+  const { t, i18n } = useTranslation();
+  const { data, error, isFetching, refetch } = useGetAllGoodsQuery(determineGoodsUrl());
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.favorite);
   const { value } = useContext(AppContext);
   const isLogin = useSelector(store => store.login);
   const navigate = useNavigate();
 
+  function determineGoodsUrl() {
+    return i18n.language === 'uk' ? urlGoods : urlGoodsEn;
+  }
+  
   useEffect(() => {
     const filterGoodsByCategory = goods =>
       category !== 'All'
@@ -35,6 +41,10 @@ export default function GoodsList({ category }) {
       setGoodsCollection(updateGoodsWithFavorites(filterGoodsByCategory(data)));
     }
   }, [category, data]);
+
+   useEffect(() => {
+    refetch();
+  }, [i18n.language]);
 
   // змінюємо масив товарів залежно від обраних користувачем товарів
   function updateGoodsWithFavorites(dataArr) {

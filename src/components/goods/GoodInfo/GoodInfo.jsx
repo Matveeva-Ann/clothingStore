@@ -25,14 +25,17 @@ export default function GoodInfo({ cardData }) {
   const navigate = useNavigate();
   
   const modalIsOpen = useSelector(state => state.modalAddToBasket)
-
   // перевірка при першому рендері чи товар знаходиться у вибраному
   useEffect(()=>{
     if(isUserLogin){
       const isFavorite = favorites.some((favorite) => favorite.sku === good.sku);
       setIsFavorite( isFavorite );
     }
-  }, [])
+  }, [cardData])
+
+  useEffect(() => {
+    setGood(cardData)
+  }, [cardData]);
   
   // вибір кольору
   function clickOnCalor(elem = {}) {

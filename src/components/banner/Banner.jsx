@@ -21,10 +21,10 @@ export default function Banner() {
       pagination={{dynamicBullets: true}}
       scrollbar={{ draggable: true }}
       loop={true}
-      autoplay={{ delay: 8000 }}
+      autoplay={{ delay: 9000 }}
       speed={1500} 
     >
-      {sliders.map((elem)=>(<SwiperSlide>{elem}</SwiperSlide>))}
+      {sliders.map((elem, index)=>(<SwiperSlide key={index}>{elem}</SwiperSlide>))}
 
       <div className="swiper-button-next" style={{ width: '50px'}}>
          <PiCaretRightThin style={{ color: '#fff'}}/>

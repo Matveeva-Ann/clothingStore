@@ -1,0 +1,456 @@
+[
+  {
+    "category": "Men",
+    "name": "Jacket",
+    "price": "49.99",
+    "imagePath": [
+      { "name": "Grey", "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-09X-001-1-566061_18.jpg" },
+      { "name": "Red", "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-33X-003-1-519679_22.jpg" },
+      { "name": "Olive", "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-91X-001-1-566063_18.jpg" },
+      { "name": "Black", "url": "https://static.sinsay.com/media/catalog/product/1/8/1810O-99X-002-1-519681_22.jpg" }
+    ],
+    "sku": "789012",
+    "colors": [
+      { "name": "Grey", "color": "#c0c0c0", "isChecked": true },
+      { "name": "Red", "color": "#A52A2A", "isChecked": false },
+      { "name": "Olive", "color": "#556B2F", "isChecked": false },
+      { "name": "Black", "color": "#000000", "isChecked": false }
+    ],
+    "color": "Grey",
+    "favorite": false,
+    "description": [
+      "Button and zipper closure",
+      "2 back pockets",
+      "2 front pockets",
+      "Light boiled effect"
+    ],
+    "size": ["xs", "s", "m", "l", "xl"]
+  },
+    {
+      "category": "Men",
+      "name": "Knitted Joggers",
+      "price": "39.99",
+      "imagePath": [
+        {
+          "color": "Dark Blue",
+          "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-59M-001-1-500969_12.jpg"
+        },
+        {
+          "color": "Beige",
+          "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-80X-001-1-502657_12.jpg"
+        },
+        {
+          "color": "Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-90X-001-1-540491_12.jpg"
+        },
+        {
+          "color": "Dark Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/1/9/1959O-9MM-001-1-500961_12.jpg"
+        }
+      ],
+      "sku": "345678",
+      "color": "Dark Blue",
+      "colors": [
+        { "name": "Dark Blue", "color": "#191970", "isChecked": true },
+        { "name": "Beige", "color": "#A0522D", "isChecked": false },
+        { "name": "Dark Grey", "color": "#696969", "isChecked": false },
+        { "name": "Grey", "color": "#C0C0C0", "isChecked": false }
+      ],
+      "favorite": false,
+      "description": [
+        "100% cotton",
+        "round neckline",
+        "long sleeves",
+        "dropped shoulder line"
+      ],
+      "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Women",
+      "name": "Women's Evening Dress",
+      "price": "59.99",
+      "imagePath": [
+        {
+          "color": "Pink",
+          "url": "https://static.sinsay.com/media/catalog/product/2/5/2598X-30X-002-1-726732.jpg"
+        },
+        {
+          "color": "Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/2/5/2598X-MLC-002-1-726734.jpg"
+        }
+      ],
+      "color": "Pink",
+      "sku": "901234",
+      "colors": [
+        { "name": "Pink", "color": "#CA7EF8", "isChecked": true },
+        { "name": "Grey", "color": "#A6ACAF", "isChecked": false }
+      ],
+      "favorite": false,
+      "description": ["midi length", "strappy", "ribbed fabric"],
+      "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Men",
+  "name": "Jumper",
+  "price": "69.99",
+  "imagePath": [
+    {
+      "color": "Dark Blue",
+      "url": "https://static.sinsay.com/media/catalog/product/0/2/0232D-59X-001-1-740657.jpg"
+    },
+    {
+      "color": "Brownish-Green",
+      "url": "https://static.sinsay.com/media/catalog/product/0/2/0232D-78X-003-1-743454.jpg"
+    },
+    {
+      "color": "Nude",
+      "url": "https://static.sinsay.com/media/catalog/product/0/2/0232D-08X-001-1-740660_4.jpg"
+    }
+  ],
+  "sku": "567890",
+  "colors": [
+    { "name": "Dark Blue", "color": "#191970", "isChecked": true },
+    { "name": "Brownish-Green", "color": "#556B2F", "isChecked": false },
+    { "name": "Nude", "color": "#EEE8AA", "isChecked": false }
+  ],
+  "color": "Dark Blue",
+  "favorite": false,
+  "description": [
+    "100% cotton",
+    "classic collar",
+    "long sleeves",
+    "button closure",
+    "1 pocket"
+  ],
+  "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Men",
+      "name": "Beanie Hat",
+      "price": "44.99",
+      "imagePath": [
+        {
+          "color": "Beige",
+          "url": "https://static.sinsay.com/media/catalog/product/3/0/3001F-80X-002-1-388027_4.jpg"
+        },
+        {
+          "color": "Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/3/0/3001F-09X-002-1-388025_9.jpg"
+        },
+        {
+          "color": "Black",
+          "url": "https://static.sinsay.com/media/catalog/product/3/0/3001F-99X-001-1-378857_6.jpg"
+        }
+      ],
+      "sku": "654321",
+      "colors": [
+        { "name": "Black", "color": "#333333", "isChecked": true },
+        { "name": "Beige", "color": "#CD853F", "isChecked": false },
+        { "name": "Grey", "color": "#9E9E9E", "isChecked": false }
+      ],
+      "color": "Black",
+      "favorite": false,
+      "description": ["decorative patch"],
+      "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Children",
+      "name": "Hoodie",
+      "price": "29.99",
+      "imagePath": [
+        {
+          "color": "Beige",
+          "url": "https://static.sinsay.com/media/catalog/product/2/1/2169Q-80X-001-1-500547_10.jpg"
+        },
+        {
+          "color": "Blue",
+          "url": "https://static.sinsay.com/media/catalog/product/2/1/2169Q-45X-001-1-473519_6.jpg"
+        },
+        {
+          "color": "Pastel Pink",
+          "url": "https://static.sinsay.com/media/catalog/product/2/1/2169Q-03X-002-1-500545_13.jpg"
+        }
+      ],
+      "sku": "432109",
+      "colors": [
+        { "name": "Beige", "color": "#D2B48C", "isChecked": true },
+        { "name": "Blue", "color": "#4682B4", "isChecked": false },
+        { "name": "Pastel Pink", "color": "#FFB6C1", "isChecked": false }
+      ],
+      "color": "Beige",
+      "favorite": false,
+      "description": [
+        "classic cut",
+        "round neckline",
+        "button closure",
+        "long sleeves",
+        "100% cotton"
+      ],
+      "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Children",
+  "name": "Insulated Winter Jumpsuit",
+  "price": "34.99",
+  "imagePath": [
+    {
+      "color": "Dark Blue",
+      "url": "https://static.sinsay.com/media/catalog/product/8/5/8532N-59X-020-1-567815_5.jpg"
+    },
+    {
+      "color": "Pink",
+      "url": "https://static.sinsay.com/media/catalog/product/8/5/8532N-MLC-002-1-540477_12.jpg"
+    },
+    {
+      "color": "Nude",
+      "url": "https://static.sinsay.com/media/catalog/product/8/5/8532N-35X-022-1-567813_5.jpg"
+    }
+  ],
+  "sku": "210987",
+  "colors": [
+    { "name": "Dark Blue", "color": "#191970", "isChecked": true },
+    { "name": "Nude", "color": "#F08080", "isChecked": false },
+    { "name": "Pink", "color": "#FF00FF", "isChecked": false }
+  ],
+  "color": "Dark Blue",
+  "favorite": false,
+  "description": [
+    "comfortable hood",
+    "zipper closure",
+    "two pockets",
+    "decorative print",
+    "melange knit"
+  ],
+  "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Children",
+      "name": "Quilted Jacket",
+      "price": "24.99",
+      "imagePath": [
+        {
+          "color": "Fuchsia",
+          "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-43X-022-1-395803_19.jpg"
+        },
+        {
+          "color": "Multicolored",
+          "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-MLC-021-1-395807_2.jpg"
+        },
+        {
+          "color": "Light Yellow",
+          "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-10X-020-1-395801_16.jpg"
+        },
+        {
+          "color": "Dark Blue",
+          "url": "https://static.sinsay.com/media/catalog/product/3/8/3835J-59X-020-1-395805_18.jpg"
+        }
+      ],
+      "color": "Fuchsia",
+      "sku": "876543",
+      "colors": [
+        { "name": "Fuchsia", "color": "#ff00ff", "isChecked": true },
+        { "name": "Multicolored", "color": "#00008B", "isChecked": false },
+        { "name": "Light Yellow", "color": "#F0E68C", "isChecked": false },
+        { "name": "Dark Blue", "color": "#000080", "isChecked": false }
+      ],
+      "favorite": false
+    },
+    {
+      "category": "Children",
+      "name": "Disney Long Sleeve",
+      "price": "14.99",
+      "imagePath": [
+        {
+          "color": "Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-09J-001-1-746820.jpg"
+        },
+        {
+          "color": "Blue",
+          "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-50J-001-1-716942.jpg"
+        },
+        {
+          "color": "Dark Blue",
+          "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-52J-001-1-746818.jpg"
+        },
+        {
+          "color": "Dark Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/9/3/9316C-90J-001-1-731489_1.jpg"
+        }
+      ],
+      "color": "Grey",
+      "sku": "876553",
+      "colors": [
+        { "name": "Dark Grey", "color": "#808080", "isChecked": true },
+        { "name": "Blue", "color": "#4682B4", "isChecked": false },
+        { "name": "Dark Blue", "color": "#000080", "isChecked": false },
+        { "name": "Grey", "color": "#9E9E9E", "isChecked": false }
+      ],
+      "favorite": false,
+      "description": [
+        "classic cut",
+        "round neckline",
+        "long sleeves",
+        "Disney characters print"
+      ],
+      "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Women",
+      "name": "Sweatshirt with Elastic Trim",
+      "price": "8.99",
+      "imagePath": [
+        {
+          "color": "Coffee",
+          "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-84X-001-1-709781_3.jpg"
+        },
+        {
+          "color": "Pale Green",
+          "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-07X-001-1-709779_4.jpg"
+        },
+        {
+          "color": "Nude",
+          "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-02X-001-1-709776_4.jpg"
+        },
+        {
+          "color": "Dark Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-90X-001-1-725104.jpg"
+        },
+        {
+          "color": "Black",
+          "url": "https://static.sinsay.com/media/catalog/product/6/3/6363J-99X-001-1-729059.jpg"
+        }
+      ],
+      "color": "Coffee",
+      "sku": "876753",
+      "colors": [
+        { "name": "Coffee", "color": "#A0522D", "isChecked": true },
+        { "name": "Pale Green", "color": "#8FBC8F", "isChecked": false },
+        { "name": "Nude", "color": "#EEE8AA", "isChecked": false },
+        { "name": "Dark Grey", "color": "#2F4F4F", "isChecked": false },
+        { "name": "Black", "color": "#000000", "isChecked": false }
+      ],
+      "favorite": false,
+      "description": [
+        "fitted silhouette",
+        "round neckline",
+        "long sleeves",
+        "ribbed fabric"
+      ],
+      "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Women",
+  "name": "Strappy Mini Dress",
+  "price": "18.99",
+  "imagePath": [
+    {
+      "color": "Black",
+      "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-99X-001-1-638863_2.jpg"
+    },
+    {
+      "color": "Sea Wave",
+      "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-56X-002-1-634061_2.jpg"
+    },
+    {
+      "color": "Red",
+      "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-23X-002-1-634063_1.jpg"
+    },
+    {
+      "color": "Beige",
+      "url": "https://static.sinsay.com/media/catalog/product/6/3/6307T-80X-001-1-706727.jpg"
+    }
+  ],
+  "color": "Black",
+  "sku": "876853",
+  "colors": [
+    { "name": "Beige", "color": "#FFFACD", "isChecked": true },
+    { "name": "Black", "color": "#333333", "isChecked": false },
+    { "name": "Sea Wave", "color": "#00BFFF", "isChecked": false },
+    { "name": "Red", "color": "#FF0000", "isChecked": false }
+  ],
+  "favorite": false,
+  "description": [
+    "100% cotton",
+    "mom fit",
+    "high waist",
+    "zip and button closure",
+    "four pockets"
+  ],
+  "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Women",
+      "name": "Ribbed Sweater",
+      "price": "7.99",
+      "imagePath": [
+        {
+          "color": "Beige",
+          "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-08X-001-1-727256.jpg"
+        },
+        {
+          "color": "Coffee",
+          "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-88X-001-1-727259.jpg"
+        },
+        {
+          "color": "Grey",
+          "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-95X-001-1-713632_1.jpg"
+        },
+        {
+          "color": "Black",
+          "url": "https://static.sinsay.com/media/catalog/product/3/3/3359X-99X-001-1-721562_1.jpg"
+        }
+      ],
+      "color": "Beige",
+      "sku": "876953",
+      "colors": [
+        { "name": "Black", "color": "#333333", "isChecked": true },
+        { "name": "Grey", "color": "#9E9E9E", "isChecked": false },
+        { "name": "Coffee", "color": "#A0522D", "isChecked": false },
+        { "name": "Beige", "color": "#DEB887", "isChecked": false }
+      ],
+      "favorite": false,
+      "description": [
+        "oversize fit",
+        "stand-up collar",
+        "dropped shoulder line",
+        "leopard pattern",
+        "ribbed elastic trim"
+      ],
+      "size": ["xs", "s", "m", "l", "xl"]
+    },
+    {
+      "category": "Women",
+  "name": "Coat with Tied Belt",
+  "price": "27.99",
+  "imagePath": [
+    {
+      "color": "Beige",
+      "url": "https://static.sinsay.com/media/catalog/product/6/6/6635J-80X-002-1-723136.jpg"
+    },
+    {
+      "color": "Cream",
+      "url": "https://static.sinsay.com/media/catalog/product/6/6/6635J-01X-001-1-723139_1.jpg"
+    },
+    {
+      "color": "Black",
+      "url": "https://static.sinsay.com/media/catalog/product/6/6/6635J-99X-002-1-734149_2.jpg"
+    }
+  ],
+  "color": "Beige",
+  "sku": "877953",
+  "colors": [
+    { "name": "Black", "color": "#333333", "isChecked": true },
+    { "name": "Cream", "color": "#FFEBCD", "isChecked": false },
+    { "name": "Beige", "color": "#A0522D", "isChecked": false }
+  ],
+  "favorite": false,
+  "description": [
+    "mini length",
+    "V-neck",
+    "zipper closure",
+    "rhinestone buttons",
+    "decorative gathers"
+  ],
+  "size": ["xs", "s", "m", "l", "xl"]
+    }  
+]
