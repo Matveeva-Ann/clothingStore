@@ -1,6 +1,6 @@
 import AppContext from 'context/context';
 import { useContext } from 'react';
-import './style.css';
+import './styleToggle.css';
 
 export default function DisplayModeToggle() {
   const { value, setValue } = useContext(AppContext);
@@ -14,7 +14,7 @@ export default function DisplayModeToggle() {
       <h5 className='title'>Змінити відображення товарів</h5>
       <div className="toggle-button-cover">
         <div className="button r" id="button-1">
-          <input type="checkbox" className="checkbox" onClick={toggle} defaultChecked={!value} />
+          <input type="checkbox" className="checkbox" onClick={toggle}/>
           <div className="knobs"></div>
           <div className="layer"></div>
         </div>

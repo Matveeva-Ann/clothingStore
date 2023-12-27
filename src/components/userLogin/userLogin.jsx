@@ -30,8 +30,6 @@ export default function UserLogin() {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  console.log(isCredentials)
-
   const handleSubmit = (values) => {
     if(values.login === 'User' && values.password === '123123йййЙ'){
       if(location.state ){

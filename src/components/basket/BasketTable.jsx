@@ -4,10 +4,12 @@ import { CardLink, RiDeleteBinLineStyle, Table, Tbody, TBodyTd, TBodyTr, THeader
 import PropTypes from 'prop-types';
 import ModalRemoveFromBasket from "components/modals/ModalRemoveFromBasket";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function BasketTable({ basketGoods, deleteFromBasket }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [goodItem, setGoodItem] = useState(0);
+  const { t } = useTranslation();
 
   function onClickDelete (good){
     setModalIsOpen(true);
@@ -18,12 +20,12 @@ export default function BasketTable({ basketGoods, deleteFromBasket }) {
     <Table>
       <THeader>
         <tr>
-          <THeaderTh>Product Details</THeaderTh>
-          <THeaderTh>Price</THeaderTh>
-          <THeaderTh>amount</THeaderTh>
-          <THeaderTh>shipping</THeaderTh>
-          <THeaderTh>subtotal</THeaderTh>
-          <THeaderTh>action</THeaderTh>
+          <THeaderTh>{t("basket.ProductDetails")}</THeaderTh>
+          <THeaderTh>{t("basket.Price")}</THeaderTh>
+          <THeaderTh>{t("basket.amount")}</THeaderTh>
+          <THeaderTh>{t("basket.shipping")}</THeaderTh>
+          <THeaderTh>{t("basket.subtotal")}</THeaderTh>
+          <THeaderTh>{t("basket.action")}</THeaderTh>
         </tr>
       </THeader>
       <Tbody>
