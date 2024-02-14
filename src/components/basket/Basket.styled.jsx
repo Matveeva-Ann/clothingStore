@@ -260,7 +260,7 @@ export const ButtonCheckout = styled.button`
    max-width: 350px;
    background-color: var(--base-color);
    color: var(--white);
-   font-size: 1.5vw;
+   font-size: 20px;
    text-transform:uppercase;
    text-align: center;
    border: none;

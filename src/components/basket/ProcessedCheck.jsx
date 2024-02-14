@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ButtonCheckout, CheckTable, CheckTableWrapper, CheckTdName, CheckTdNameTotal, CheckTdValue, CheckTdValueTotal, CheckWrapper } from "./Basket.styled";
@@ -10,6 +11,7 @@ export default function ProcessedCheck() {
   const totalItems = basket.reduce((accum, elem) => accum + Number(elem.amount) , 0);
   const isUserLogin = useSelector(store => store.login)
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const shipping = 0;
   const totalPriseWithShipping = (totalPrise + shipping).toFixed(2);
@@ -24,25 +26,25 @@ export default function ProcessedCheck() {
         <CheckTable>
           <tbody>
             <tr>
-              <CheckTdName>Sub Total</CheckTdName>
+              <CheckTdName>{t('basket.SubTotal')}</CheckTdName>
               <CheckTdValue>${totalPrise}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdName>Total Items</CheckTdName>
+              <CheckTdName>{t('basket.TotalItems')}</CheckTdName>
               <CheckTdValue>{totalItems}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdName>Shipping</CheckTdName>
+              <CheckTdName>{t('basket.Shipping')}</CheckTdName>
               <CheckTdValue>${shipping}</CheckTdValue>
             </tr>
             <tr>
-              <CheckTdNameTotal>Grand Total</CheckTdNameTotal>
+              <CheckTdNameTotal>{t('basket.GrandTotal')}</CheckTdNameTotal>
               <CheckTdValueTotal>${totalPriseWithShipping}</CheckTdValueTotal>
             </tr>
           </tbody>
         </CheckTable>
       </CheckTableWrapper>
-      <ButtonCheckout onClick={clickCheckout} >Proceed To Checkout</ButtonCheckout>
+      <ButtonCheckout onClick={clickCheckout} >{t('basket.Checkout')}</ButtonCheckout>
     </CheckWrapper>
   )
 }

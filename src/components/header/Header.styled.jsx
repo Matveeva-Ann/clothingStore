@@ -32,8 +32,8 @@ export const LogoLink = styled(Link) `
 `
 export const LogoText = styled.span `
   position: absolute;
-  bottom: -12px;
-  right: -14px;
+  bottom: -14px;
+  right: -24px;
   font-size: 14px;
   display: block;
 `
@@ -81,7 +81,7 @@ export const InputSearchWrapper = styled.div `
   }
 `
 export const InputSearch = styled.input `
-  max-width: 270px;
+  max-width: 180px;
   border: none;
   border-radius: 8px;
   background-color: var(--backgroundAccent);
